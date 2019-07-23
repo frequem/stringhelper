@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.2)
 
 project(stringhelper C)
 
+option(ENABLE_TESTING "enable testing" OFF)
+
 set(CMAKE_C_FLAGS_DEBUG "-O3 -g -Werror -pedantic-errors -Wall -Wextra -Wno-sign-compare")
 set(CMAKE_C_FLAGS_RELEASE "-O3")
 
@@ -10,19 +12,21 @@ file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.*")
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
-enable_testing()
+if(ENABLE_TESTING)
+	enable_testing()
 
-file(GLOB_RECURSE TEST_MAINSOURCES "test/test_*.c")
-file(GLOB_RECURSE TEST_SOURCES "test/*.c")
-list(REMOVE_ITEM TEST_SOURCES ${TEST_MAINSOURCES})
+	file(GLOB_RECURSE TEST_MAINSOURCES "test/test_*.c")
+	file(GLOB_RECURSE TEST_SOURCES "test/*.c")
+	list(REMOVE_ITEM TEST_SOURCES ${TEST_MAINSOURCES})
 
-foreach(file ${TEST_MAINSOURCES})
-	get_filename_component(name ${file} NAME_WE)
-	add_executable(${name} ${file} ${TEST_SOURCES})
-	string(SUBSTRING ${name} 5 -1 shortname)
-	target_link_libraries (${name} LINK_PUBLIC ${PROJECT_NAME})
-	add_test(NAME ${shortname} COMMAND ${name})
-endforeach()
+	foreach(file ${TEST_MAINSOURCES})
+		get_filename_component(name ${file} NAME_WE)
+		add_executable(${name} ${file} ${TEST_SOURCES})
+		string(SUBSTRING ${name} 5 -1 shortname)
+		target_link_libraries (${name} LINK_PUBLIC ${PROJECT_NAME})
+		add_test(NAME ${shortname} COMMAND ${name})
+	endforeach()
+endif()
 
 include(GNUInstallDirs)
 

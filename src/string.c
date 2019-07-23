@@ -5,25 +5,11 @@
 #include <ctype.h>
 #include <stdio.h>
 
-static int string_is_initialized(string_t s){
-	return s.maxlen > 0;
-}
-
-string_t* string_init(string_t* s){
-	if(string_is_initialized(*s)){ return s; }
-	s->chars = malloc(sizeof(char)*STRING_LEN_INCREMENT);
-	s->len = 0;
-	s->maxlen = STRING_LEN_INCREMENT;
-	return s;
-}
-
-
 void string_free(string_t* s){
-	if(string_is_initialized(*s)){ free(s->chars); }
+	free(s->chars);
 }
 
 static void string_realloc(string_t* s, int n){
-	string_init(s);
 	if(n <= s->maxlen){ return; }
 	int new_len = STRING_LEN_INCREMENT;
 	while(new_len <= n){ //if n is a multiple of INCREMENT, add an additional one
@@ -79,11 +65,11 @@ string_t* string_insert(string_t* dest, string_t src, int at){
 	i = (i<0)?0:((i>dest->len)?dest->len:i);
 	int l = dest->len + src.len;
 	string_realloc(dest, l);
-	char* data = dest->chars;
 	//chars 0-i are already at correct position
 	memcpy(&(dest->chars[src.len+i]), &(dest->chars[i]), dest->len-i);//move chars i+1 - dest.len to end of string
 	memcpy(&(dest->chars[i]), src.chars, src.len);//copy src chars after i'th char
 	dest->len = l;
+	return dest;
 }
 
 string_t* string_insert_cstr(string_t* dest, char* cstr, int at){
@@ -114,13 +100,11 @@ string_t* string_insert_int(string_t* dest, int i, int at){
 }
 
 string_t* string_clear(string_t* s){
-	string_init(s);
 	s->len = 0;
 	return s;
 }
 
 string_t* string_toupper(string_t* s){
-	string_init(s);
 	char* cstr = s->chars;
 	for(int i=0; i<s->len; i++){
 		*cstr = toupper((unsigned char) *cstr);
@@ -129,29 +113,38 @@ string_t* string_toupper(string_t* s){
 	return s;
 }
 
-int string_substr(string_t* s, int start, int len){
-	string_init(s);
-	int i = (start<0)?(start+s->len):start;
-	if(i >= 0 && i < s->len){
-		int l = (((i+len)>s->len)||len<0)?(s->len-i):len;
-		char* data = malloc(sizeof(char)*l);
-		char* old = s->chars;
-		memcpy(data, &(old[i]), l);
-		s->chars = data;
-		s->len = l;
-		free(old);
-		return 1;
+string_t* string_tolower(string_t* s){
+	char* cstr = s->chars;
+	for(int i=0; i<s->len; i++){
+		*cstr = tolower((unsigned char) *cstr);
+		cstr++;
 	}
-	return 0;
+	return s;
 }
 
-int string_charAt(string_t s, int at, char* ch){
+string_t* string_substr(string_t* s, int start, int len){
+	int i = (start<0)?(start+s->len):start;
+	i = i<0?0:((i>=s->len)?(s->len):i);
+	
+	int l = (((i+len)>s->len)||len<0)?(s->len-i):len;
+	memmove(s->chars, &(s->chars[i]), l);
+	s->len = l;
+	return s;
+}
+
+char string_charAt(string_t s, int at, char* ch){
+	char c;
 	int i = (at<0)?(at+s.len):at;
-	if(i >= 0 && i < s.len){
-		*ch = s.chars[i];
-		return 1;
+	i = i<0?0:((i>=s.len)?(s.len-1):i);
+	if(i >= 0 && i < s.len)
+		c = s.chars[i];
+	else
+		c = '\0';
+	
+	if(ch != NULL){
+		*ch = c;
 	}
-	return 0;
+	return c;
 }
 
 unsigned int string_len(string_t s){
@@ -160,10 +153,7 @@ unsigned int string_len(string_t s){
 
 int string_compare(string_t s1, string_t s2){
 	int min_len = (s1.len < s2.len)?s1.len:s2.len;
-	int r = 0;
-	if(string_is_initialized(s1) && string_is_initialized(s2)){
-		r = memcmp(s1.chars, s2.chars, min_len);
-	}
+	int r = memcmp(s1.chars, s2.chars, min_len);
 	
 	if(r == 0){
 		if(s1.len < s2.len){
@@ -184,5 +174,5 @@ int string_compare_cstr(string_t s1, char* cstr2){
 }
 
 ssize_t string_write(int fd, string_t s){
-	return string_is_initialized(s)?write(fd, s.chars, s.len):-1;
+	return write(fd, s.chars, s.len);
 }

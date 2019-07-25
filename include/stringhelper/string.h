@@ -21,6 +21,33 @@ typedef struct{
 } string_t;
 
 /**
+ * @brief Converts a cstr into a string
+ * @param cstr the null-terminated string to be converted
+ * The resulting string will only contain correct data as long as cstr lives
+ * The resulting string must not be freed
+ * This function should only be used as a parameter for another string_ function, never to initialize a variable
+ */
+string_t string_cstr(char* cstr);
+
+/**
+ * @brief Converts a char into a string
+ * @param ch the char to be converted
+ * The resulting string will only contain correct data until string_char will be called again
+ * The resulting string must not be freed
+ * This function should only be used as a parameter for another string_ function, never to initialize a variable
+ */
+string_t string_char(char ch);
+
+/**
+ * @brief Converts an integer into a string
+ * @param i the int to be converted
+ * The resulting string will only contain correct data until string_int will be called again
+ * The resulting string should not be freed
+ * This function should only be used as a parameter for another string_ function, never to initialize a variable
+ */
+string_t string_int(int i);
+
+/**
  * @brief Frees a string previously initialized
  * @param s the string to be freed
  */
@@ -45,36 +72,6 @@ string_t* string_copy(string_t* dest, string_t src);
  */
 string_t* string_append(string_t* dest, string_t src);
 /**
- * @brief Appends a null-terminated string to a string
- * @param dest the output string that src is appended to
- * @param cstr the c string that is appended to dest
- * @return dest
- * @see string_append(string_t* dest, string_t src)
- * @see string_append_char(string_t* dest, char ch)
- * @see string_append_int(string_t* dest, int i)
- */
-string_t* string_append_cstr(string_t* dest, char* cstr);
-/**
- * @brief Appends a char to a string
- * @param dest the output string that ch is appended to
- * @param ch the character that is appended
- * @return dest
- * @see string_append(string_t* dest, string_t src)
- * @see string_append_cstr(string_t* dest, char* cstr)
- * @see string_append_int(string_t* dest, int i)
- */
-string_t* string_append_char(string_t* dest, char ch);
-/**
- * @brief Appends an int to a string_append
- * @param dest the output string that i as appended to
- * @param i the integer to be appended
- * @return dest
- * @see string_append(string_t* dest, string_t src)
- * @see string_append_cstr(string_t* dest, char* cstr)
- * @see string_append_char(string_t* dest, char ch)
- */
-string_t* string_append_int(string_t* dest, int i);
-/**
  * @brief Inserts a string into another
  * If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large
  * If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small
@@ -87,45 +84,6 @@ string_t* string_append_int(string_t* dest, int i);
  * @see string_insert_int(string_t* dest, int i, int at)
  */
 string_t* string_insert(string_t* dest, string_t src, int at);
-/**
- * @brief Inserts a null-terminated string into a string
- * If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large
- * If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small
- * @param dest the output string that src is inserted into
- * @param cstr the c string that is inserted to dest
- * @param at the position where src is inserted
- * @return dest
- * @see string_insert(string_t* dest, string_t src, int at)
- * @see string_insert_char(string_t* dest, char ch, int at)
- * @see string_insert_int(string_t* dest, int i, int at)
- */
-string_t* string_insert_cstr(string_t* dest, char* cstr, int at);
-/**
- * @brief Inserts a char into a string
- * If at is non-negative, ch is inserted at the at'th position of dest or at the back if at is too large
- * If at is negative, ch is inserted at the at'th position from the back of dest or at the front if at is too small
- * @param dest the output string that ch is inserted into
- * @param ch the character that is inserted
- * @param at the position where ch is inserted
- * @return dest
- * @see string_insert(string_t* dest, string_t src, int at)
- * @see string_insert_cstr(string_t* dest, char* cstr, int)
- * @see string_insert_int(string_t* dest, int i, int at)
- */
-string_t* string_insert_char(string_t* dest, char ch, int at);
-/**
- * @brief Inserts an int into a string
- * If at is non-negative, i is inserted at the at'th position of dest or at the back if at is too large
- * If at is negative, i is inserted at the at'th position from the back of dest or at the front if at is too small
- * @param dest the output string that i is inserted into
- * @param i the int that is inserted
- * @param at the position where i is inserted
- * @return dest
- * @see string_insert(string_t* dest, string_t src, int at)
- * @see string_insert_cstr(string_t* dest, char* cstr, int)
- * @see string_insert_char(string_t* dest, char ch, int at)
- */
-string_t* string_insert_int(string_t* dest, int i, int at);
 
 /**
  * @brief Clears the string
@@ -179,6 +137,16 @@ char string_charAt(string_t s, int at, char* ch);
  * @return the string length
  */
 unsigned int string_len(string_t s);
+
+/**
+ * @brief Find the position of a string inside another string
+ * @param s the string to search inside of
+ * @param needle the string to find
+ * @param offset the offset from which to search from
+ * @return the index of needle inside s or the length of s if it was not found
+ */
+unsigned int string_find(string_t s, string_t needle, int offset);
+
 /**
  * @brief Compares two strings
  * @param s1 string to be compared
@@ -187,15 +155,6 @@ unsigned int string_len(string_t s);
  * @see string_compare_cstr(string_t s1, char* cstr2)
  */
 int string_compare(string_t s1, string_t s2);
-
-/**
- * @brief Compares a string with a null-terminated string
- * @param s1 string to be compared
- * @param cstr2 c string to be compared
- * @return <0 if the first char that doesn't match has a lower value in s1 than in s2, 0 if both strings are equal, >1 if the first character that does not match has a greater value in s1 than in s2
- * @see string_compare(string_t s1, string_t s2)
- */
-int string_compare_cstr(string_t s1, char* cstr2);
 
 /**
  * @brief Writes a string to a file descriptor

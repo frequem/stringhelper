@@ -5,6 +5,32 @@
 #include <ctype.h>
 #include <stdio.h>
 
+string_t string_cstr(char* cstr){
+	string_t temp;
+	temp.chars = cstr;
+	temp.len = strlen(cstr);
+	temp.maxlen = temp.len;
+	return temp;
+}
+
+string_t string_char(char ch){
+	static char c = '\0';
+	c = ch;
+	
+	string_t temp;
+	temp.chars = &c;
+	temp.len = 1;
+	temp.maxlen = temp.len;
+	return temp;
+}
+
+string_t string_int(int i){
+	static char buf[32];
+	int l = snprintf(NULL, 0, "%i", i); // get string length
+	snprintf(buf, l+1, "%i", i); // write i to str
+	return string_cstr(buf);
+}
+
 void string_free(string_t* s){
 	free(s->chars);
 }
@@ -33,33 +59,6 @@ string_t* string_append(string_t* dest, string_t src){
 	return dest;
 }
 
-string_t* string_append_cstr(string_t* dest, char* cstr){
-	string_t temp;
-	temp.chars = cstr;
-	temp.len = strlen(cstr);
-	temp.maxlen = temp.len;
-	string_append(dest, temp);
-	return dest;
-}
-
-string_t* string_append_char(string_t* dest, char ch){
-	string_t temp;
-	temp.chars = &ch;
-	temp.len = 1;
-	temp.maxlen = temp.len;
-	string_append(dest, temp);
-	return dest;
-}
-
-string_t* string_append_int(string_t* dest, int i){
-	int l = snprintf(NULL, 0, "%i", i); // get string length
-	char* str = malloc(sizeof(char)*(l+1));
-	snprintf(str, l+1, "%i", i); // write i to str
-	string_append_cstr(dest, str);
-	free(str);
-	return dest;
-}
-
 string_t* string_insert(string_t* dest, string_t src, int at){
 	int i = (at<0)?(at+1+dest->len):at;
 	i = (i<0)?0:((i>dest->len)?dest->len:i);
@@ -69,33 +68,6 @@ string_t* string_insert(string_t* dest, string_t src, int at){
 	memcpy(&(dest->chars[src.len+i]), &(dest->chars[i]), dest->len-i);//move chars i+1 - dest.len to end of string
 	memcpy(&(dest->chars[i]), src.chars, src.len);//copy src chars after i'th char
 	dest->len = l;
-	return dest;
-}
-
-string_t* string_insert_cstr(string_t* dest, char* cstr, int at){
-	string_t temp;
-	temp.chars = cstr;
-	temp.len = strlen(cstr);
-	temp.maxlen = temp.len;
-	string_insert(dest, temp, at);
-	return dest;
-}
-
-string_t* string_insert_char(string_t* dest, char ch, int at){
-	string_t temp;
-	temp.chars = &ch;
-	temp.len = 1;
-	temp.maxlen = temp.len;
-	string_insert(dest, temp, at);
-	return dest;
-}
-
-string_t* string_insert_int(string_t* dest, int i, int at){
-	int l = snprintf(NULL, 0, "%i", i); // get string length
-	char* str = malloc(sizeof(char)*(l+1));
-	snprintf(str, l+1, "%i", i); // write i to str
-	string_insert_cstr(dest, str, at);
-	free(str);
 	return dest;
 }
 
@@ -151,6 +123,25 @@ unsigned int string_len(string_t s){
 	return s.len;
 }
 
+unsigned int string_find(string_t s, string_t needle, int offset){
+	int ls = string_len(s);
+	int ln = string_len(needle);
+	
+	for(int i=offset; i<ls; i++){
+		for(int j=0; i+j<ls; j++){
+			if(ln <= j)
+				break;
+			if(string_charAt(s, i+j, NULL) == string_charAt(needle, j, NULL)){
+				if(ln-1 == j)
+					return i;
+			}else{
+				break;
+			}
+		}
+	}
+	return string_len(s);
+}
+
 int string_compare(string_t s1, string_t s2){
 	int min_len = (s1.len < s2.len)?s1.len:s2.len;
 	int r = memcmp(s1.chars, s2.chars, min_len);
@@ -163,14 +154,6 @@ int string_compare(string_t s1, string_t s2){
 		}
 	}
 	return r;
-}
-
-int string_compare_cstr(string_t s1, char* cstr2){
-	string_t temp;
-	temp.chars = cstr2;
-	temp.len = strlen(cstr2);
-	temp.maxlen = temp.len;
-	return string_compare(s1, temp);
 }
 
 ssize_t string_write(int fd, string_t s){

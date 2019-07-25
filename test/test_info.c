@@ -4,11 +4,11 @@
 #include <stringhelper/string.h>
 
 int main(){
-	string_t s = *string_append_cstr(&STRING_INITIALIZER, "test123");
+	string_t s = *string_append(&STRING_INITIALIZER, string_cstr("test123"));
 	
 	ASSERT(string_len(s)==7, "len(test123)==7");
 	
-	string_append_cstr(&s, "abc");
+	string_append(&s, string_cstr("abc"));
 	ASSERT(string_len(s)==10, "len(test123abc)==10");
 	
 	string_clear(&s);
@@ -19,7 +19,7 @@ int main(){
 	s = STRING_INITIALIZER;
 	ASSERT(string_len(s)==0, "len(init)==0");
 	
-	string_append_cstr(&s, "test123");
+	string_append(&s, string_cstr("test123"));
 	char ch;
 	
 	ASSERT(string_charAt(s, 0, &ch)=='t' && ch=='t', "charAt(test123, 0)=='t'");

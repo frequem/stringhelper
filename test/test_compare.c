@@ -4,10 +4,10 @@
 #include <stringhelper/string.h>
 
 int main(){
-	string_t abc = *string_append_cstr(&STRING_INITIALIZER, "abc");
-	string_t abc1 = *string_append_cstr(&STRING_INITIALIZER, "abc1");
-	string_t abc2 = *string_append_cstr(&STRING_INITIALIZER, "abc2");
-	string_t xyz = *string_append_cstr(&STRING_INITIALIZER, "xyz");
+	string_t abc = *string_append(&STRING_INITIALIZER, string_cstr("abc"));
+	string_t abc1 = *string_append(&STRING_INITIALIZER, string_cstr("abc1"));
+	string_t abc2 = *string_append(&STRING_INITIALIZER, string_cstr("abc2"));
+	string_t xyz = *string_append(&STRING_INITIALIZER, string_cstr("xyz"));
 	
 	ASSERT(string_compare(abc2, abc1)>0, "comp(abc2, abc1)>0");
 	ASSERT(string_compare(abc1, abc2)<0, "comp(abc1, abc2)<0");
@@ -18,16 +18,6 @@ int main(){
 	ASSERT(string_compare(xyz, abc)>0, "comp(xyz, abc)>0");
 	ASSERT(string_compare(abc1, xyz)<0, "comp(abc1, xyz)<0");
 	ASSERT(string_compare(xyz, abc1)>0, "comp(xyz, abc1)>0");
-	
-	ASSERT(string_compare_cstr(abc2, "abc1")>0, "comp_cstr(abc2, \"abc1\")>0");
-	ASSERT(string_compare_cstr(abc1, "abc2")<0, "comp_cstr(abc1, \"abc2\")<0");
-	ASSERT(string_compare_cstr(abc1, "abc1")==0, "comp_cstr(abc1, \"abc1\")==0");
-	ASSERT(string_compare_cstr(abc1, "abc")>0, "comp_cstr(abc1, \"abc\")>0");
-	ASSERT(string_compare_cstr(abc, "abc1")<0, "comp_cstr(abc, \"abc1\")<0");
-	ASSERT(string_compare_cstr(abc, "xyz")<0, "comp_cstr(abc, \"xyz\")<0");
-	ASSERT(string_compare_cstr(xyz, "abc")>0, "comp_cstr(xyz, \"abc\")>0");
-	ASSERT(string_compare_cstr(abc1, "xyz")<0, "comp_cstr(abc1, \"xyz\")<0");
-	ASSERT(string_compare_cstr(xyz, "abc1")>0, "comp_cstr(xyz, \"abc1\")>0");
 	
 	string_free(&abc);
 	string_free(&abc1);

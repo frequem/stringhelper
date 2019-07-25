@@ -4,16 +4,17 @@
 #include <stringhelper/string.h>
 
 int main(){
-	string_t s = *string_append_cstr(&STRING_INITIALIZER, "test123");
+	string_t s = *string_append(&STRING_INITIALIZER, string_cstr("test123"));
 	
 	string_toupper(&s);
-	ASSERT(string_compare_cstr(s, "TEST123")==0, "toupper");
+	ASSERT(string_compare(s, string_cstr("TEST123"))==0, "toupper");
 	
 	string_tolower(&s);
-	ASSERT(string_compare_cstr(s, "test123")==0, "tolower");
+	ASSERT(string_compare(s, string_cstr("test123"))==0, "tolower");
 	
 	string_clear(&s);
-	ASSERT(string_compare_cstr(s, "")==0, "clear");
+	ASSERT(string_compare(s, string_cstr(""))==0, "clear");
 	
+	string_free(&s);
 	return TEST_RESULT;
 }

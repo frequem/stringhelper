@@ -142,6 +142,23 @@ unsigned int string_find(string_t s, string_t needle, int offset){
 	return string_len(s);
 }
 
+unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset){
+	unsigned int i = string_find(*s, find, offset);
+	
+	if(i < string_len(*s)){
+		string_t copy = *string_copy(&STRING_INITIALIZER, *s);
+		
+		string_substr(s, 0, i);
+		string_substr(&copy, i+string_len(find), -1);
+		
+		string_append(s, replace);
+		string_append(s, copy);
+		
+		string_free(&copy);
+	}
+	return i;
+}
+
 int string_compare(string_t s1, string_t s2){
 	int min_len = (s1.len < s2.len)?s1.len:s2.len;
 	int r = memcmp(s1.chars, s2.chars, min_len);

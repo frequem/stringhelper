@@ -148,6 +148,16 @@ unsigned int string_len(string_t s);
 unsigned int string_find(string_t s, string_t needle, int offset);
 
 /**
+ * @brief Replaces the first instance of replace inside of a s with find
+ * @param s the string
+ * @param find the string to be found
+ * @param replace the string to replace find
+ * @param offset the offset from which to replace from
+ * @return the index of find inside the original s or the length of s if it was not found
+ */
+unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset);
+
+/**
  * @brief Compares two strings
  * @param s1 string to be compared
  * @param s2 string to be compared

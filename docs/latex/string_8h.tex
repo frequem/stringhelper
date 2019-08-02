@@ -44,6 +44,8 @@ unsigned int \mbox{\hyperlink{string_8h_af0200ff02e064ec8349c083a9bbaf55e}{strin
 \begin{DoxyCompactList}\small\item\em Returns the string length of a given string. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_ab6e264db38306c78fbfadf17a231b32e}{string\+\_\+find}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
 \begin{DoxyCompactList}\small\item\em Find the position of a string inside another string. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{string_8h_a1dbd4eacf1bd7edb0c1f87a797f356d5}{string\+\_\+replace}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
+\begin{DoxyCompactList}\small\item\em Replaces the first instance of replace inside of a s with find. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{string_8h_a302ff4c42f766b61fed6db8a4ba793ef}{string\+\_\+compare}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s1, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s2)
 \begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
 ssize\+\_\+t \mbox{\hyperlink{string_8h_ad7aee9cb2e302d4d561816c0532c1e61}{string\+\_\+write}} (int fd, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
@@ -312,6 +314,30 @@ Returns the string length of a given string.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the string length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_a1dbd4eacf1bd7edb0c1f87a797f356d5}\label{string_8h_a1dbd4eacf1bd7edb0c1f87a797f356d5}} 
+\index{string.h@{string.h}!string\_replace@{string\_replace}}
+\index{string\_replace@{string\_replace}!string.h@{string.h}}
+\subsubsection{\texorpdfstring{string\_replace()}{string\_replace()}}
+{\footnotesize\ttfamily unsigned int string\+\_\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Replaces the first instance of replace inside of a s with find. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+{\em find} & the string to be found \\
+\hline
+{\em replace} & the string to replace find \\
+\hline
+{\em offset} & the offset from which to replace from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of find inside the original s or the length of s if it was not found 
 \end{DoxyReturn}
 \mbox{\Hypertarget{string_8h_ad34c5e3304b3242f701c1b36dc9c23a2}\label{string_8h_ad34c5e3304b3242f701c1b36dc9c23a2}} 
 \index{string.h@{string.h}!string\_substr@{string\_substr}}

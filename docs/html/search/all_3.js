@@ -17,6 +17,7 @@ var searchData=
   ['string_5flen',['string_len',['../string_8h.html#af0200ff02e064ec8349c083a9bbaf55e',1,'string_len(string_t s):&#160;string.c'],['../string_8c.html#af0200ff02e064ec8349c083a9bbaf55e',1,'string_len(string_t s):&#160;string.c']]],
   ['string_5flen_5fincrement',['STRING_LEN_INCREMENT',['../string_8h.html#a9434cdf580c098d1076557f27a423929',1,'string.h']]],
   ['string_5frealloc',['string_realloc',['../string_8c.html#a636a5629dd9bbf2b1097a74f895b8d41',1,'string.c']]],
+  ['string_5freplace',['string_replace',['../string_8h.html#a1dbd4eacf1bd7edb0c1f87a797f356d5',1,'string_replace(string_t *s, string_t find, string_t replace, int offset):&#160;string.c'],['../string_8c.html#a1dbd4eacf1bd7edb0c1f87a797f356d5',1,'string_replace(string_t *s, string_t find, string_t replace, int offset):&#160;string.c']]],
   ['string_5fsubstr',['string_substr',['../string_8h.html#ad34c5e3304b3242f701c1b36dc9c23a2',1,'string_substr(string_t *s, int start, int len):&#160;string.c'],['../string_8c.html#ad34c5e3304b3242f701c1b36dc9c23a2',1,'string_substr(string_t *s, int start, int len):&#160;string.c']]],
   ['string_5ft',['string_t',['../structstring__t.html',1,'']]],
   ['string_5ftolower',['string_tolower',['../string_8h.html#af406503fa9675b8ea59b44281422e686',1,'string_tolower(string_t *s):&#160;string.c'],['../string_8c.html#af406503fa9675b8ea59b44281422e686',1,'string_tolower(string_t *s):&#160;string.c']]],

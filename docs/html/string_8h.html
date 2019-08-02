@@ -159,6 +159,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab6e264db38306c78fbfadf17a231b32e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ab6e264db38306c78fbfadf17a231b32e">string_find</a> (<a class="el" href="structstring__t.html">string_t</a> s, <a class="el" href="structstring__t.html">string_t</a> needle, int offset)</td></tr>
 <tr class="memdesc:ab6e264db38306c78fbfadf17a231b32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the position of a string inside another string.  <a href="#ab6e264db38306c78fbfadf17a231b32e">More...</a><br /></td></tr>
 <tr class="separator:ab6e264db38306c78fbfadf17a231b32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbd4eacf1bd7edb0c1f87a797f356d5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a1dbd4eacf1bd7edb0c1f87a797f356d5">string_replace</a> (<a class="el" href="structstring__t.html">string_t</a> *s, <a class="el" href="structstring__t.html">string_t</a> find, <a class="el" href="structstring__t.html">string_t</a> replace, int offset)</td></tr>
+<tr class="memdesc:a1dbd4eacf1bd7edb0c1f87a797f356d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the first instance of replace inside of a s with find.  <a href="#a1dbd4eacf1bd7edb0c1f87a797f356d5">More...</a><br /></td></tr>
+<tr class="separator:a1dbd4eacf1bd7edb0c1f87a797f356d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a302ff4c42f766b61fed6db8a4ba793ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a302ff4c42f766b61fed6db8a4ba793ef">string_compare</a> (<a class="el" href="structstring__t.html">string_t</a> s1, <a class="el" href="structstring__t.html">string_t</a> s2)</td></tr>
 <tr class="memdesc:a302ff4c42f766b61fed6db8a4ba793ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two strings.  <a href="#a302ff4c42f766b61fed6db8a4ba793ef">More...</a><br /></td></tr>
 <tr class="separator:a302ff4c42f766b61fed6db8a4ba793ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -618,6 +621,58 @@ string_insert_int(string_t* dest, int i, int at) </dd></dl>
 
 </div>
 </div>
+<a id="a1dbd4eacf1bd7edb0c1f87a797f356d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dbd4eacf1bd7edb0c1f87a797f356d5">&#9670;&nbsp;</a></span>string_replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int string_replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstring__t.html">string_t</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstring__t.html">string_t</a>&#160;</td>
+          <td class="paramname"><em>find</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structstring__t.html">string_t</a>&#160;</td>
+          <td class="paramname"><em>replace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces the first instance of replace inside of a s with find. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the string </td></tr>
+    <tr><td class="paramname">find</td><td>the string to be found </td></tr>
+    <tr><td class="paramname">replace</td><td>the string to replace find </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset from which to replace from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index of find inside the original s or the length of s if it was not found </dd></dl>
+
+</div>
+</div>
 <a id="ad34c5e3304b3242f701c1b36dc9c23a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad34c5e3304b3242f701c1b36dc9c23a2">&#9670;&nbsp;</a></span>string_substr()</h2>
 
@@ -758,7 +813,7 @@ string_insert_int(string_t* dest, int i, int at) </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2019 13:00:32 for stringhelper by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 2 2019 21:06:44 for stringhelper by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

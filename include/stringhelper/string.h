@@ -48,6 +48,16 @@ string_t string_char(char ch);
 string_t string_int(int i);
 
 /**
+ * @brief Converts a char buffer into a string
+ * @param buf the char buffer to be converted
+ * @param size the size of the char buffer
+ * The resulting string will only contain correct data as long as buf lives
+ * The resulting string must not be freed
+ * This function should only be used as a parameter for another string_ function, never to initialize a variable
+ */
+string_t string_buf(char* buf, int size);
+
+/**
  * @brief Frees a string previously initialized
  * @param s the string to be freed
  */
@@ -124,13 +134,11 @@ string_t* string_substr(string_t* s, int start, int len);
  * If at is positive, the output character is the at'th char of the original string
  * If at is negative, the output character is the at'th char from the end of the original string
  * If the string is empty, this function always returns NULL
- * ch can be NULL
  * @param s the input string
  * @param at the position of the desired character
- * @param ch the output character
- * @return ch
+ * @return the character at the at'th position of the string or NULL
  */
-char string_charAt(string_t s, int at, char* ch);
+char string_charAt(string_t s, int at);
 /**
  * @brief Returns the string length of a given string
  * @param s the string
@@ -139,13 +147,23 @@ char string_charAt(string_t s, int at, char* ch);
 unsigned int string_len(string_t s);
 
 /**
- * @brief Find the position of a string inside another string
+ * @brief Find the position of the first instance of a string inside another string
  * @param s the string to search inside of
  * @param needle the string to find
  * @param offset the offset from which to search from
  * @return the index of needle inside s or the length of s if it was not found
  */
 unsigned int string_find(string_t s, string_t needle, int offset);
+
+/**
+ * @brief Find the position of the last instance of a string inside another string
+ * If offset is 0 the string's length is used.
+ * @param s the string to search inside of
+ * @param needle the string to find
+ * @param offset the offset from which to search from
+ * @return the index of needle inside s or the length of s if it was not found
+ */
+unsigned int string_find_reverse(string_t s, string_t needle, int offset);
 
 /**
  * @brief Replaces the first instance of replace inside of a s with find
@@ -156,6 +174,17 @@ unsigned int string_find(string_t s, string_t needle, int offset);
  * @return the index of find inside the original s or the length of s if it was not found
  */
 unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset);
+
+/**
+ * @brief Replaces the last instance of replace inside of a s with find
+ * If offset is 0 the string's length is used.
+ * @param s the string
+ * @param find the string to be found
+ * @param replace the string to replace find
+ * @param offset the offset from which to replace from
+ * @return the index of find inside the original s or the length of s if it was not found
+ */
+unsigned int string_replace_reverse(string_t* s, string_t find, string_t replace, int offset);
 
 /**
  * @brief Compares two strings

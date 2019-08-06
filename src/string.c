@@ -31,6 +31,14 @@ string_t string_int(int i){
 	return string_cstr(buf);
 }
 
+string_t string_buf(char* buf, int size){
+	string_t temp;
+	temp.chars = buf;
+	temp.len = size;
+	temp.maxlen = size;
+	return temp;
+}
+
 void string_free(string_t* s){
 	free(s->chars);
 }
@@ -104,7 +112,7 @@ string_t* string_substr(string_t* s, int start, int len){
 	return s;
 }
 
-char string_charAt(string_t s, int at, char* ch){
+char string_charAt(string_t s, int at){
 	char c;
 	int i = (at<0)?(at+s.len):at;
 	i = i<0?0:((i>=s.len)?(s.len-1):i);
@@ -112,10 +120,6 @@ char string_charAt(string_t s, int at, char* ch){
 		c = s.chars[i];
 	else
 		c = '\0';
-	
-	if(ch != NULL){
-		*ch = c;
-	}
 	return c;
 }
 
@@ -124,14 +128,14 @@ unsigned int string_len(string_t s){
 }
 
 unsigned int string_find(string_t s, string_t needle, int offset){
-	int ls = string_len(s);
-	int ln = string_len(needle);
+	unsigned int ls = string_len(s);
+	unsigned int ln = string_len(needle);
 	
 	for(int i=offset; i<ls; i++){
 		for(int j=0; i+j<ls; j++){
 			if(ln <= j)
 				break;
-			if(string_charAt(s, i+j, NULL) == string_charAt(needle, j, NULL)){
+			if(string_charAt(s, i+j) == string_charAt(needle, j)){
 				if(ln-1 == j)
 					return i;
 			}else{
@@ -139,11 +143,47 @@ unsigned int string_find(string_t s, string_t needle, int offset){
 			}
 		}
 	}
-	return string_len(s);
+	return ls;
+}
+
+unsigned int string_find_reverse(string_t s, string_t needle, int offset){
+	unsigned int ls = string_len(s);
+	unsigned int ln = string_len(needle);
+	
+	for(int i=((offset>0)?offset:ls-1); i>=0; i--){
+		for(int j=0; i-j>=0; j++){
+			if(ln <= j)
+				break;
+			if(string_charAt(s, i-j) == string_charAt(needle, ln-j-1)){
+				if(j == ln-1)
+					return i-ln+1;
+			}else{
+				break;
+			}
+		}
+	}
+	return ls;
 }
 
 unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset){
 	unsigned int i = string_find(*s, find, offset);
+	
+	if(i < string_len(*s)){
+		string_t copy = *string_copy(&STRING_INITIALIZER, *s);
+		
+		string_substr(s, 0, i);
+		string_substr(&copy, i+string_len(find), -1);
+		
+		string_append(s, replace);
+		string_append(s, copy);
+		
+		string_free(&copy);
+	}
+	return i;
+}
+
+unsigned int string_replace_reverse(string_t* s, string_t find, string_t replace, int offset){
+	unsigned int i = string_find_reverse(*s, find, offset);
 	
 	if(i < string_len(*s)){
 		string_t copy = *string_copy(&STRING_INITIALIZER, *s);

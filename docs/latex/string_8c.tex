@@ -13,6 +13,8 @@
 \begin{DoxyCompactList}\small\item\em Converts a char into a string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a2bcdffaf2bfca5f609e8d2c680c88cd7}{string\+\_\+int}} (int i)
 \begin{DoxyCompactList}\small\item\em Converts an integer into a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}{string\+\_\+buf}} (char $\ast$buf, int size)
+\begin{DoxyCompactList}\small\item\em Converts a char buffer into a string. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{string_8c_a01b1a1e13e36040e9887989b97fb8fa2}{string\+\_\+free}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Frees a string previously initialized. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{string_8c_a636a5629dd9bbf2b1097a74f895b8d41}{string\+\_\+realloc}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, int n)
@@ -31,14 +33,18 @@ static void \mbox{\hyperlink{string_8c_a636a5629dd9bbf2b1097a74f895b8d41}{string
 \begin{DoxyCompactList}\small\item\em Converts a given string to lower case. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_ad34c5e3304b3242f701c1b36dc9c23a2}{string\+\_\+substr}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, int start, int len)
 \begin{DoxyCompactList}\small\item\em Fetches a portion of the string If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the original string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the original string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the input string). If len is negative, the output string will contain all characters beginning from start. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{string_8c_a2143966b691cadc2476ebeb71061919c}{string\+\_\+char\+At}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, int at, char $\ast$ch)
-\begin{DoxyCompactList}\small\item\em Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL ch can be N\+U\+LL. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{string_8c_af7ddc602f854e23ccd165a69bc7652cf}{string\+\_\+char\+At}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, int at)
+\begin{DoxyCompactList}\small\item\em Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8c_af0200ff02e064ec8349c083a9bbaf55e}{string\+\_\+len}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
 \begin{DoxyCompactList}\small\item\em Returns the string length of a given string. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8c_ab6e264db38306c78fbfadf17a231b32e}{string\+\_\+find}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
-\begin{DoxyCompactList}\small\item\em Find the position of a string inside another string. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Find the position of the first instance of a string inside another string. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}{string\+\_\+find\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
+\begin{DoxyCompactList}\small\item\em Find the position of the last instance of a string inside another string If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8c_a1dbd4eacf1bd7edb0c1f87a797f356d5}{string\+\_\+replace}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
 \begin{DoxyCompactList}\small\item\em Replaces the first instance of replace inside of a s with find. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{string_8c_a42c75ae5342d29acbc4226374b8925f8}{string\+\_\+replace\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
+\begin{DoxyCompactList}\small\item\em Replaces the last instance of replace inside of a s with find If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{string_8c_a302ff4c42f766b61fed6db8a4ba793ef}{string\+\_\+compare}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s1, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s2)
 \begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
 ssize\+\_\+t \mbox{\hyperlink{string_8c_ad7aee9cb2e302d4d561816c0532c1e61}{string\+\_\+write}} (int fd, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
@@ -73,6 +79,23 @@ string\+\_\+append\+\_\+char(string\+\_\+t$\ast$ dest, char ch)
 
 string\+\_\+append\+\_\+int(string\+\_\+t$\ast$ dest, int i) 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}\label{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}} 
+\index{string.c@{string.c}!string\_buf@{string\_buf}}
+\index{string\_buf@{string\_buf}!string.c@{string.c}}
+\subsubsection{\texorpdfstring{string\_buf()}{string\_buf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+buf (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Converts a char buffer into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the char buffer to be converted \\
+\hline
+{\em size} & the size of the char buffer The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{string_8c_a58ddc5fbc1d6cb19360b15c8b44194f5}\label{string_8c_a58ddc5fbc1d6cb19360b15c8b44194f5}} 
 \index{string.c@{string.c}!string\_char@{string\_char}}
 \index{string\_char@{string\_char}!string.c@{string.c}}
@@ -88,15 +111,15 @@ Converts a char into a string.
 {\em ch} & the char to be converted The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_a2143966b691cadc2476ebeb71061919c}\label{string_8c_a2143966b691cadc2476ebeb71061919c}} 
+\mbox{\Hypertarget{string_8c_af7ddc602f854e23ccd165a69bc7652cf}\label{string_8c_af7ddc602f854e23ccd165a69bc7652cf}} 
 \index{string.c@{string.c}!string\_charAt@{string\_charAt}}
 \index{string\_charAt@{string\_charAt}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_charAt()}{string\_charAt()}}
-{\footnotesize\ttfamily char string\+\_\+char\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{int}]{at,  }\item[{char $\ast$}]{ch }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char string\+\_\+char\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{int}]{at }\end{DoxyParamCaption})}
 
 
 
-Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL ch can be N\+U\+LL. 
+Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -104,11 +127,9 @@ Fetches a char of the string at a given position If at is positive, the output c
 \hline
 {\em at} & the position of the desired character \\
 \hline
-{\em ch} & the output character \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-ch 
+the character at the at\textquotesingle{}th position of the string or N\+U\+LL 
 \end{DoxyReturn}
 \mbox{\Hypertarget{string_8c_a33f74ed740e7a14ceab2f598e53dbbf8}\label{string_8c_a33f74ed740e7a14ceab2f598e53dbbf8}} 
 \index{string.c@{string.c}!string\_clear@{string\_clear}}
@@ -194,7 +215,29 @@ Converts a cstr into a string.
 
 
 
-Find the position of a string inside another string. 
+Find the position of the first instance of a string inside another string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to search inside of \\
+\hline
+{\em needle} & the string to find \\
+\hline
+{\em offset} & the offset from which to search from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of needle inside s or the length of s if it was not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}\label{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}} 
+\index{string.c@{string.c}!string\_find\_reverse@{string\_find\_reverse}}
+\index{string\_find\_reverse@{string\_find\_reverse}!string.c@{string.c}}
+\subsubsection{\texorpdfstring{string\_find\_reverse()}{string\_find\_reverse()}}
+{\footnotesize\ttfamily unsigned int string\+\_\+find\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{needle,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Find the position of the last instance of a string inside another string If offset is 0 the string\textquotesingle{}s length is used. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -300,6 +343,30 @@ the string length
 
 
 Replaces the first instance of replace inside of a s with find. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+{\em find} & the string to be found \\
+\hline
+{\em replace} & the string to replace find \\
+\hline
+{\em offset} & the offset from which to replace from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of find inside the original s or the length of s if it was not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8c_a42c75ae5342d29acbc4226374b8925f8}\label{string_8c_a42c75ae5342d29acbc4226374b8925f8}} 
+\index{string.c@{string.c}!string\_replace\_reverse@{string\_replace\_reverse}}
+\index{string\_replace\_reverse@{string\_replace\_reverse}!string.c@{string.c}}
+\subsubsection{\texorpdfstring{string\_replace\_reverse()}{string\_replace\_reverse()}}
+{\footnotesize\ttfamily unsigned int string\+\_\+replace\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Replaces the last instance of replace inside of a s with find If offset is 0 the string\textquotesingle{}s length is used. 
 
 
 \begin{DoxyParams}{Parameters}

@@ -20,6 +20,10 @@ int main(){
 	string_append(&s, string_int(12345));
 	ASSERT(string_compare(s, string_cstr("test123xtest123x12345"))==0, "Append int");
 	
+	char buf[3] = {'a', 'b', 'c'};
+	string_append(&s, string_buf(buf, sizeof(buf)));
+	ASSERT(string_compare(s, string_cstr("test123xtest123x12345abc"))==0, "Append char buf");
+	
 	string_free(&s);
 	return TEST_RESULT;
 }

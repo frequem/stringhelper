@@ -20,25 +20,22 @@ int main(){
 	ASSERT(string_len(s)==0, "len(init)==0");
 	
 	string_append(&s, string_cstr("test123"));
-	char ch;
 	
-	ASSERT(string_charAt(s, 0, &ch)=='t' && ch=='t', "charAt(test123, 0)=='t'");
-	ASSERT(string_charAt(s, 1, &ch)=='e' && ch=='e', "charAt(test123, 1)=='e'");
-	ASSERT(string_charAt(s, -1, &ch)=='3' && ch=='3', "charAt(test123, -1)=='3'");
-	ASSERT(string_charAt(s, -2, &ch)=='2' && ch=='2', "charAt(test123, -2)=='2'");
+	ASSERT(string_charAt(s, 0)=='t', "charAt(test123, 0)=='t'");
+	ASSERT(string_charAt(s, 1)=='e', "charAt(test123, 1)=='e'");
+	ASSERT(string_charAt(s, -1)=='3', "charAt(test123, -1)=='3'");
+	ASSERT(string_charAt(s, -2)=='2', "charAt(test123, -2)=='2'");
 	
-	ASSERT(string_charAt(s, 7, &ch)=='3' && ch=='3', "charAt(test123, 7)=='3'");
-	ASSERT(string_charAt(s, -8, &ch)=='t' && ch=='t', "charAt(test123, -8)=='t'");
-	
-	ASSERT(string_charAt(s, 1, NULL)=='e', "charAt(test123, 1)=='e' (ch NULL)");
+	ASSERT(string_charAt(s, 7)=='3', "charAt(test123, 7)=='3'");
+	ASSERT(string_charAt(s, -8)=='t', "charAt(test123, -8)=='t'");
 	
 	string_clear(&s);
 	
-	ASSERT(string_charAt(s, 0, &ch)=='\0' && ch=='\0', "charAt(, 0)==NULL");
-	ASSERT(string_charAt(s, -1, &ch)=='\0' && ch=='\0', "charAt(, -1)==NULL");
-	ASSERT(string_charAt(s, -3, &ch)=='\0' && ch=='\0', "charAt(, -3)==NULL");
-	ASSERT(string_charAt(s, 1, &ch)=='\0' && ch=='\0', "charAt(, 1)==NULL");
-	ASSERT(string_charAt(s, 3, &ch)=='\0' && ch=='\0', "charAt(, 3)==NULL");
+	ASSERT(string_charAt(s, 0)=='\0', "charAt(, 0)==NULL");
+	ASSERT(string_charAt(s, -1)=='\0', "charAt(, -1)==NULL");
+	ASSERT(string_charAt(s, -3)=='\0', "charAt(, -3)==NULL");
+	ASSERT(string_charAt(s, 1)=='\0', "charAt(, 1)==NULL");
+	ASSERT(string_charAt(s, 3)=='\0', "charAt(, 3)==NULL");
 	
 	string_free(&s);
 	

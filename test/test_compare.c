@@ -4,10 +4,10 @@
 #include <stringhelper/string.h>
 
 int main(){
-	string_t abc = *string_append(&STRING_INITIALIZER, string_cstr("abc"));
-	string_t abc1 = *string_append(&STRING_INITIALIZER, string_cstr("abc1"));
-	string_t abc2 = *string_append(&STRING_INITIALIZER, string_cstr("abc2"));
-	string_t xyz = *string_append(&STRING_INITIALIZER, string_cstr("xyz"));
+	string_t abc = *string_copy(&STRING_INITIALIZER, string_cstr("abc"));
+	string_t abc1 = *string_copy(&STRING_INITIALIZER, string_cstr("abc1"));
+	string_t abc2 = *string_copy(&STRING_INITIALIZER, string_cstr("abc2"));
+	string_t xyz = *string_copy(&STRING_INITIALIZER, string_cstr("xyz"));
 	
 	ASSERT(string_compare(abc2, abc1)>0, "comp(abc2, abc1)>0");
 	ASSERT(string_compare(abc1, abc2)<0, "comp(abc1, abc2)<0");

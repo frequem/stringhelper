@@ -73,27 +73,23 @@ string_t* string_copy(string_t* dest, string_t src);
 
 /**
  * @brief Appends a string to another
- * @param dest the output string that src is appended to
- * @param src the string that is appended to dest
+ * @param dest the output string
+ * @param src the input string that in is appended to
+ * @param in the string that is appended to src
  * @return dest
- * @see string_append_cstr(string_t* dest, char* cstr)
- * @see string_append_char(string_t* dest, char ch)
- * @see string_append_int(string_t* dest, int i)
  */
-string_t* string_append(string_t* dest, string_t src);
+string_t* string_append(string_t* dest, string_t src, string_t in);
 /**
  * @brief Inserts a string into another
  * If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large
  * If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small
- * @param dest the output string that src is inserted into
- * @param src the string that is inserted to dest
+ * @param dest the output string
+ * @param src the input string that in is inserted into
+ * @param in the string that in is inserted into src
  * @param at the position where src is inserted
  * @return dest
- * @see string_insert_cstr(string_t* dest, char* cstr, int at)
- * @see string_insert_char(string_t* dest, char ch, int at)
- * @see string_insert_int(string_t* dest, int i, int at)
  */
-string_t* string_insert(string_t* dest, string_t src, int at);
+string_t* string_insert(string_t* dest, string_t src, string_t in, int at);
 
 /**
  * @brief Clears the string
@@ -104,30 +100,33 @@ string_t* string_clear(string_t* s);
 
 /**
  * @brief Converts a given string to upper case
- * @param s the string
+ * @param dest the output string
+ * @param src the input string
  * @return s
  */
-string_t* string_toupper(string_t* s);
+string_t* string_toupper(string_t* dest, string_t src);
 
 /**
  * @brief Converts a given string to lower case
- * @param s the string
+ * @param dest the output string
+ * @param src the input string
  * @return s
  */
-string_t* string_tolower(string_t* s);
+string_t* string_tolower(string_t* dest, string_t src);
 
 /**
  * @brief Fetches a portion of the string
- * If start is non-negative, the output string will start at the start'th position of the original string.
- * If start is negative, the substring will start at the start'th position from the end of the original string.
+ * If start is non-negative, the output string will start at the start'th position of the input string.
+ * If start is negative, the substring will start at the start'th position from the end of the input string.
  * If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the input string).
  * If len is negative, the output string will contain all characters beginning from start.
- * @param s the string
+ * @param dest the output string
+ * @param src the input string
  * @param start the start index of the new string
  * @param len the length of the new string
  * @return s
  */
-string_t* string_substr(string_t* s, int start, int len);
+string_t* string_substr(string_t* dest, string_t src, int start, int len);
 
 /**
  * @brief Fetches a char of the string at a given position
@@ -167,24 +166,26 @@ unsigned int string_find_reverse(string_t s, string_t needle, int offset);
 
 /**
  * @brief Replaces the first instance of replace inside of a s with find
- * @param s the string
+ * @param dest the output string
+ * @param src the input string
  * @param find the string to be found
  * @param replace the string to replace find
  * @param offset the offset from which to replace from
- * @return the index of find inside the original s or the length of s if it was not found
+ * @return the index of find inside the original src or the length of src if it was not found
  */
-unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset);
+unsigned int string_replace(string_t* dest, string_t src, string_t find, string_t replace, int offset);
 
 /**
  * @brief Replaces the last instance of replace inside of a s with find
  * If offset is 0 the string's length is used.
- * @param s the string
+ * @param dest the output string
+ * @param src the input string
  * @param find the string to be found
  * @param replace the string to replace find
  * @param offset the offset from which to replace from
- * @return the index of find inside the original s or the length of s if it was not found
+ * @return the index of find inside the original src or the length of src if it was not found
  */
-unsigned int string_replace_reverse(string_t* s, string_t find, string_t replace, int offset);
+unsigned int string_replace_reverse(string_t* dest, string_t src, string_t find, string_t replace, int offset);
 
 /**
  * @brief Compares two strings

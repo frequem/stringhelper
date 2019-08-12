@@ -60,21 +60,19 @@ string_t* string_copy(string_t* dest, string_t src){
 	return dest;
 }
 
-string_t* string_append(string_t* dest, string_t src){
-	string_realloc(dest, dest->len + src.len);
-	memcpy(&(dest->chars[dest->len]), src.chars, src.len);
-	dest->len += src.len;
-	return dest;
+string_t* string_append(string_t* dest, string_t src, string_t in){
+	return string_insert(dest, src, in, -1);
 }
 
-string_t* string_insert(string_t* dest, string_t src, int at){
-	int i = (at<0)?(at+1+dest->len):at;
-	i = (i<0)?0:((i>dest->len)?dest->len:i);
-	int l = dest->len + src.len;
+string_t* string_insert(string_t* dest, string_t src, string_t in, int at){
+	int i = (at<0)?(at+1+src.len):at;
+	i = (i<0)?0:((i>src.len)?src.len:i);
+	int l = src.len + in.len;
+	
 	string_realloc(dest, l);
-	//chars 0-i are already at correct position
-	memcpy(&(dest->chars[src.len+i]), &(dest->chars[i]), dest->len-i);//move chars i+1 - dest.len to end of string
-	memcpy(&(dest->chars[i]), src.chars, src.len);//copy src chars after i'th char
+	memmove(dest->chars, src.chars, i); //move chars 0-i to start
+	memmove(&(dest->chars[in.len+i]), &(src.chars[i]), src.len-i);//move chars i+1 - src.len to end
+	memmove(&(dest->chars[i]), in.chars, in.len);//move in chars after i'th char
 	dest->len = l;
 	return dest;
 }
@@ -84,38 +82,45 @@ string_t* string_clear(string_t* s){
 	return s;
 }
 
-string_t* string_toupper(string_t* s){
-	char* cstr = s->chars;
-	for(int i=0; i<s->len; i++){
-		*cstr = toupper((unsigned char) *cstr);
-		cstr++;
-	}
-	return s;
-}
-
-string_t* string_tolower(string_t* s){
-	char* cstr = s->chars;
-	for(int i=0; i<s->len; i++){
-		*cstr = tolower((unsigned char) *cstr);
-		cstr++;
-	}
-	return s;
-}
-
-string_t* string_substr(string_t* s, int start, int len){
-	int i = (start<0)?(start+s->len):start;
-	i = i<0?0:((i>=s->len)?(s->len):i);
+string_t* string_toupper(string_t* dest, string_t src){
+	string_realloc(dest, src.len);
+	dest->len = src.len;
 	
-	int l = (((i+len)>s->len)||len<0)?(s->len-i):len;
-	memmove(s->chars, &(s->chars[i]), l);
-	s->len = l;
-	return s;
+	for(int i=0; i<src.len; i++){
+		dest->chars[i] = toupper((unsigned char) src.chars[i]);
+	}
+	
+	return dest;
+}
+
+string_t* string_tolower(string_t* dest, string_t src){
+	string_realloc(dest, src.len);
+	dest->len = src.len;
+	
+	for(int i=0; i<src.len; i++){
+		dest->chars[i] = tolower((unsigned char) src.chars[i]);
+	}
+	
+	return dest;
+}
+
+string_t* string_substr(string_t* dest, string_t src, int start, int len){
+	int i = (start<0)?(start+src.len):start;
+	i = i<0?0:((i>=src.len)?(src.len):i);
+	int l = (((i+len)>src.len)||len<0)?(src.len-i):len;
+	
+	string_realloc(dest, l);
+	dest->len = l;
+	memmove(dest->chars, &(src.chars[i]), l);
+	
+	return dest;
 }
 
 char string_charAt(string_t s, int at){
 	char c;
 	int i = (at<0)?(at+s.len):at;
 	i = i<0?0:((i>=s.len)?(s.len-1):i);
+		
 	if(i >= 0 && i < s.len)
 		c = s.chars[i];
 	else
@@ -165,34 +170,34 @@ unsigned int string_find_reverse(string_t s, string_t needle, int offset){
 	return ls;
 }
 
-unsigned int string_replace(string_t* s, string_t find, string_t replace, int offset){
-	unsigned int i = string_find(*s, find, offset);
+unsigned int string_replace(string_t* dest, string_t src, string_t find, string_t replace, int offset){
+	unsigned int i = string_find(src, find, offset);
 	
-	if(i < string_len(*s)){
-		string_t copy = *string_copy(&STRING_INITIALIZER, *s);
+	if(i < string_len(src)){
+		string_t copy = *string_copy(&STRING_INITIALIZER, src);
 		
-		string_substr(s, 0, i);
-		string_substr(&copy, i+string_len(find), -1);
+		string_substr(dest, src, 0, i);
+		string_substr(&copy, copy, i+string_len(find), -1);
 		
-		string_append(s, replace);
-		string_append(s, copy);
+		string_append(dest, *dest, replace);
+		string_append(dest, *dest, copy);
 		
 		string_free(&copy);
 	}
 	return i;
 }
 
-unsigned int string_replace_reverse(string_t* s, string_t find, string_t replace, int offset){
-	unsigned int i = string_find_reverse(*s, find, offset);
+unsigned int string_replace_reverse(string_t* dest, string_t src, string_t find, string_t replace, int offset){
+	unsigned int i = string_find_reverse(src, find, offset);
 	
-	if(i < string_len(*s)){
-		string_t copy = *string_copy(&STRING_INITIALIZER, *s);
+	if(i < string_len(src)){
+		string_t copy = *string_copy(&STRING_INITIALIZER, src);
 		
-		string_substr(s, 0, i);
-		string_substr(&copy, i+string_len(find), -1);
+		string_substr(dest, src, 0, i);
+		string_substr(&copy, copy, i+string_len(find), -1);
 		
-		string_append(s, replace);
-		string_append(s, copy);
+		string_append(dest, *dest, replace);
+		string_append(dest, *dest, copy);
 		
 		string_free(&copy);
 	}

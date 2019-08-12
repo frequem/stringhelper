@@ -4,7 +4,7 @@
 #include <stringhelper/string.h>
 
 int main(){
-	string_t s = *string_append(&STRING_INITIALIZER, string_cstr("test123"));
+	string_t s = *string_copy(&STRING_INITIALIZER, string_cstr("test123"));
 	
 	string_t s2 = STRING_INITIALIZER;
 	string_copy(&s2, s);

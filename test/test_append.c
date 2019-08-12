@@ -24,6 +24,11 @@ int main(){
 	string_append(&s, s, string_buf(buf, sizeof(buf)));
 	ASSERT(string_compare(s, string_cstr("test123xtest123x12345abc"))==0, "Append char buf");
 	
+	string_append(&s, s, string_float(123.456));
+	ASSERT(string_compare(s, string_cstr("test123xtest123x12345abc123.456"))==0, "Append float");
+	
+	string_write(STDOUT_FILENO, s);
+	
 	string_free(&s);
 	return TEST_RESULT;
 }

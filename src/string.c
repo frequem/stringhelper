@@ -14,21 +14,36 @@ string_t string_cstr(char* cstr){
 }
 
 string_t string_char(char ch){
-	static char c = '\0';
-	c = ch;
+	static char cs[STRING_CONVERSION_BUFFERS] = {'\0'};
+	static int i = 0;
+	i = (i+1)%(sizeof cs);
+	cs[i] = ch;
 	
 	string_t temp;
-	temp.chars = &c;
+	temp.chars = &cs[i];
 	temp.len = 1;
 	temp.maxlen = temp.len;
 	return temp;
 }
 
-string_t string_int(int i){
-	static char buf[32];
-	int l = snprintf(NULL, 0, "%i", i); // get string length
-	snprintf(buf, l+1, "%i", i); // write i to str
-	return string_cstr(buf);
+string_t string_int(long long int i){
+	static char buf[32*STRING_CONVERSION_BUFFERS];
+	static int j = 0;
+	j = (j+32)%(sizeof buf);
+	
+	int l = snprintf(NULL, 0, "%lld", i); // get string length
+	snprintf(&buf[j], l+1, "%lld", i); // write i to str
+	return string_cstr(&buf[j]);
+}
+
+string_t string_float(double f){
+	static char buf[32*STRING_CONVERSION_BUFFERS];
+	static int j = 0;
+	j = (j+32)%(sizeof buf);
+	
+	int l = snprintf(NULL, 0, "%g", f); // get string length
+	snprintf(&buf[j], l+1, "%g", f); // write f to str
+	return string_cstr(&buf[j]);
 }
 
 string_t string_buf(char* buf, int size){
@@ -114,6 +129,17 @@ string_t* string_substr(string_t* dest, string_t src, int start, int len){
 	memmove(dest->chars, &(src.chars[i]), l);
 	
 	return dest;
+}
+
+string_t* string_erase(string_t* dest, string_t src, int start, int len){
+	int i = (start<0)?(start+src.len):start;
+	i = i<0?0:((i>=src.len)?(src.len):i);
+	int l = (((i+len)>src.len)||len<0)?(src.len-i):len;
+	
+	string_realloc(dest, src.len-l);
+	memmove(dest->chars, src.chars, i);
+	memmove(&dest->chars[i], &src.chars[i+l], src.len-i-l);
+	dest->len = src.len-l;
 }
 
 char string_charAt(string_t s, int at){

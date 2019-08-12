@@ -5,7 +5,7 @@ int TEST_RESULT = 0;
 
 void ASSERT(int cond, char* text){
 	printf("Test: %s ", text);
-	for(int i=strlen(text); i<64; i++){
+	for(int i=strlen(text); i<100; i++){
 		printf(".");
 	}
 	printf(" ");

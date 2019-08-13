@@ -7,69 +7,71 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static char $\ast$ \mbox{\hyperlink{string_8c_aaa5212d5d6731c76c65a23ae8e204478}{string\+\_\+get\+\_\+conv\+\_\+buf}} ()
+static \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a48d5a3634578e5c59917e4658dd67cd8}{string\+\_\+get\+\_\+conv\+\_\+buf}} ()
 \item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}{string\+\_\+buf}} (char $\ast$buf, int size)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a55bcead71bd7fc29b935156fd0411e22}{string\+\_\+buf}} (char $\ast$buf, int size)
 \begin{DoxyCompactList}\small\item\em Converts a char buffer into a string. The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a3bdfb47ded8ab185e26728f374dac0e8}{string\+\_\+cstr}} (char $\ast$cstr)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a0ad9e9f848db682cb5a807bad8d1d098}{string\+\_\+cstr}} (char $\ast$cstr)
 \begin{DoxyCompactList}\small\item\em Converts a cstr into a string. The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a58ddc5fbc1d6cb19360b15c8b44194f5}{string\+\_\+char}} (char ch)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a892d1f39102bb7ceb0df4b79ab495cac}{string\+\_\+char}} (char ch)
 \begin{DoxyCompactList}\small\item\em Converts a char into a string. The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_a4821dbde2b4c57353ed86be16305ab9a}{string\+\_\+int}} (long long int i)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_ae32bdfe3fca1410f2370268e4427db47}{string\+\_\+int}} (long long int i)
 \begin{DoxyCompactList}\small\item\em Converts a long long integer into a string. The resulting string will only contain correct data until string\+\_\+int will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_aa29b3438eb58fca3d2047b7ef92d816d}{string\+\_\+float}} (double f)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_adeaf586a9ba6c4516ee362a3be57e755}{string\+\_\+float}} (double f)
 \begin{DoxyCompactList}\small\item\em Converts a double into a string. The resulting string will only contain correct data until string\+\_\+float will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{string_8c_a01b1a1e13e36040e9887989b97fb8fa2}{string\+\_\+free}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Frees a string previously initialized. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{string_8c_a636a5629dd9bbf2b1097a74f895b8d41}{string\+\_\+realloc}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, int n)
 \item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_ae1c6f51192f2e4991a4206de07dd3c2e}{string\+\_\+copy}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_aa06e641d4ae6f456a8b7d0c30348f6d3}{string\+\_\+copy}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src)
 \begin{DoxyCompactList}\small\item\em Copies a string. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_aecd83f426ddb4be2fb9c035d481a053d}{string\+\_\+append}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} in)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_aad2d4613f07426f736aa822ba34be837}{string\+\_\+append}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$in)
 \begin{DoxyCompactList}\small\item\em Appends a string to another. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a23f59bf62eb592abe96671caf49b7767}{string\+\_\+insert}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} in, int at)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a51ac7dbf84cd9af40be86e1c10c2c92d}{string\+\_\+insert}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$in, int at)
 \begin{DoxyCompactList}\small\item\em Inserts a string into another. If at is non-\/negative, src is inserted at the at\textquotesingle{}th position of dest or at the back if at is too large If at is negative, src is inserted at the at\textquotesingle{}th position from the back of dest or at the front if at is too small. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a33f74ed740e7a14ceab2f598e53dbbf8}{string\+\_\+clear}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Clears the string. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a9287e29d1f03f1c91295a7e1a84761ea}{string\+\_\+toupper}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a763b13e2052d9ce5cbee5cba84778df8}{string\+\_\+toupper}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src)
 \begin{DoxyCompactList}\small\item\em Converts a given string to upper case. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_ab75ff668bc47f5ca8c7e205f2285065f}{string\+\_\+tolower}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a987734237b19adcd3343e64188259fe5}{string\+\_\+tolower}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src)
 \begin{DoxyCompactList}\small\item\em Converts a given string to lower case. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a1e1da173489e1abd1c2617a5928599aa}{string\+\_\+substr}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, int start, int len)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_abefe6a3e0952e3fd6752f5fd61ba5643}{string\+\_\+substr}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, int start, int len)
 \begin{DoxyCompactList}\small\item\em Fetches a portion of the string. If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the src string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a43853c2559852078b67572f9ec737098}{string\+\_\+erase}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, int start, int len)
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8c_a32eff65e35d3d3518ec107e429434589}{string\+\_\+erase}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, int start, int len)
 \begin{DoxyCompactList}\small\item\em Erases part of the string. If start is non-\/negative, the erased part of the string will start at the start\textquotesingle{}th position of the src string. If start is negative, the erased part of the string will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{string_8c_af7ddc602f854e23ccd165a69bc7652cf}{string\+\_\+char\+At}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, int at)
+char \mbox{\hyperlink{string_8c_a7a840fcc2f982ea84638c3feec8e33b2}{string\+\_\+char\+At}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, int at)
 \begin{DoxyCompactList}\small\item\em Fetches a char of the string at a given position. If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{string_8c_af0200ff02e064ec8349c083a9bbaf55e}{string\+\_\+len}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
+unsigned int \mbox{\hyperlink{string_8c_ac22b94ea852c5887e5682d76ba308419}{string\+\_\+len}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Returns the string length of a given string. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{string_8c_ab6e264db38306c78fbfadf17a231b32e}{string\+\_\+find}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
+unsigned int \mbox{\hyperlink{string_8c_a740881fdb258a2d80b4aebcfe9325299}{string\+\_\+find}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$needle, int offset)
 \begin{DoxyCompactList}\small\item\em Find the position of the first instance of a string inside another string. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}{string\+\_\+find\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
+unsigned int \mbox{\hyperlink{string_8c_a0508ec0be871498978c5d6ef8fc4e678}{string\+\_\+find\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$needle, int offset)
 \begin{DoxyCompactList}\small\item\em Find the position of the last instance of a string inside another string. If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{string_8c_ac63af47d57e38af34dd1e58f6ff273ba}{string\+\_\+replace}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
+unsigned int \mbox{\hyperlink{string_8c_aac25952b7d6a00733391a1740e474c04}{string\+\_\+replace}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$replace, int offset)
 \begin{DoxyCompactList}\small\item\em Replaces the first instance of replace inside of a s with find. \end{DoxyCompactList}\item 
-unsigned int \mbox{\hyperlink{string_8c_a04b7e04d7394d4f29797e846d62ff570}{string\+\_\+replace\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
+unsigned int \mbox{\hyperlink{string_8c_adfba62f65031ad3b038e5a1dca8a1fb8}{string\+\_\+replace\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$replace, int offset)
 \begin{DoxyCompactList}\small\item\em Replaces the last instance of replace inside of a s with find. If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{string_8c_a302ff4c42f766b61fed6db8a4ba793ef}{string\+\_\+compare}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s1, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s2)
+int \mbox{\hyperlink{string_8c_abaf75eda6441354de357d141473e7325}{string\+\_\+compare}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s1, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s2)
 \begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
-ssize\+\_\+t \mbox{\hyperlink{string_8c_ad7aee9cb2e302d4d561816c0532c1e61}{string\+\_\+write}} (int fd, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
+ssize\+\_\+t \mbox{\hyperlink{string_8c_a4f63a8c36fd342f67e1e39b99886b383}{string\+\_\+write}} (int fd, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Writes a string to a file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-static char \mbox{\hyperlink{string_8c_ad6695ff1ff16796c80ddef7916e0be67}{string\+\_\+conv\+\_\+buf}} \mbox{[}\mbox{\hyperlink{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}} $\ast$\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}
+static \mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8c_ac391acd3d53ec6b933175730193c35c5}{string\+\_\+conv\+\_\+buf}} \mbox{[}\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}
 \item 
-static char \mbox{\hyperlink{string_8c_a7faf5c043dcd263a41d14c0770714593}{string\+\_\+conv\+\_\+buf\+\_\+offset}} = 0
+static char \mbox{\hyperlink{string_8c_a61f719acd30321ed6a602b1d5ce9daf1}{string\+\_\+conv\+\_\+buf\+\_\+chars}} \mbox{[}\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static int \mbox{\hyperlink{string_8c_a1609540f0a94f5e649ef1f4ca0cfd3ac}{string\+\_\+conv\+\_\+buf\+\_\+offset}} = 0
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{string_8c_aecd83f426ddb4be2fb9c035d481a053d}\label{string_8c_aecd83f426ddb4be2fb9c035d481a053d}} 
+\mbox{\Hypertarget{string_8c_aad2d4613f07426f736aa822ba34be837}\label{string_8c_aad2d4613f07426f736aa822ba34be837}} 
 \index{string.c@{string.c}!string\_append@{string\_append}}
 \index{string\_append@{string\_append}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_append()}{string\_append()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{in }\end{DoxyParamCaption})}
 
 
 
@@ -87,11 +89,11 @@ Appends a string to another.
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}\label{string_8c_a8ec70c9cb2fd7fdb80e64d3a5117900e}} 
+\mbox{\Hypertarget{string_8c_a55bcead71bd7fc29b935156fd0411e22}\label{string_8c_a55bcead71bd7fc29b935156fd0411e22}} 
 \index{string.c@{string.c}!string\_buf@{string\_buf}}
 \index{string\_buf@{string\_buf}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_buf()}{string\_buf()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+buf (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{int}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+buf (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{int}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -104,11 +106,11 @@ Converts a char buffer into a string. The resulting string will only contain cor
 {\em size} & the size of the char buffer \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_a58ddc5fbc1d6cb19360b15c8b44194f5}\label{string_8c_a58ddc5fbc1d6cb19360b15c8b44194f5}} 
+\mbox{\Hypertarget{string_8c_a892d1f39102bb7ceb0df4b79ab495cac}\label{string_8c_a892d1f39102bb7ceb0df4b79ab495cac}} 
 \index{string.c@{string.c}!string\_char@{string\_char}}
 \index{string\_char@{string\_char}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_char()}{string\_char()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
 
 
 
@@ -119,11 +121,11 @@ Converts a char into a string. The resulting string will only contain correct da
 {\em ch} & the char to be converted \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_af7ddc602f854e23ccd165a69bc7652cf}\label{string_8c_af7ddc602f854e23ccd165a69bc7652cf}} 
+\mbox{\Hypertarget{string_8c_a7a840fcc2f982ea84638c3feec8e33b2}\label{string_8c_a7a840fcc2f982ea84638c3feec8e33b2}} 
 \index{string.c@{string.c}!string\_charAt@{string\_charAt}}
 \index{string\_charAt@{string\_charAt}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_charAt()}{string\_charAt()}}
-{\footnotesize\ttfamily char string\+\_\+char\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{int}]{at }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char string\+\_\+char\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{int}]{at }\end{DoxyParamCaption})}
 
 
 
@@ -157,11 +159,11 @@ Clears the string.
 \begin{DoxyReturn}{Returns}
 s 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a302ff4c42f766b61fed6db8a4ba793ef}\label{string_8c_a302ff4c42f766b61fed6db8a4ba793ef}} 
+\mbox{\Hypertarget{string_8c_abaf75eda6441354de357d141473e7325}\label{string_8c_abaf75eda6441354de357d141473e7325}} 
 \index{string.c@{string.c}!string\_compare@{string\_compare}}
 \index{string\_compare@{string\_compare}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_compare()}{string\_compare()}}
-{\footnotesize\ttfamily int string\+\_\+compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s1,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int string\+\_\+compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s1,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s2 }\end{DoxyParamCaption})}
 
 
 
@@ -178,13 +180,13 @@ Compares two strings.
 $<$0 if the first char that doesn\textquotesingle{}t match has a lower value in s1 than in s2, 0 if both strings are equal, $>$1 if the first character that does not match has a greater value in s1 than in s2 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-string\+\_\+compare\+\_\+cstr(string\+\_\+t s1, char$\ast$ cstr2) 
+string\+\_\+compare\+\_\+cstr(string\+\_\+t$\ast$ s1, char$\ast$ cstr2) 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{string_8c_ae1c6f51192f2e4991a4206de07dd3c2e}\label{string_8c_ae1c6f51192f2e4991a4206de07dd3c2e}} 
+\mbox{\Hypertarget{string_8c_aa06e641d4ae6f456a8b7d0c30348f6d3}\label{string_8c_aa06e641d4ae6f456a8b7d0c30348f6d3}} 
 \index{string.c@{string.c}!string\_copy@{string\_copy}}
 \index{string\_copy@{string\_copy}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_copy()}{string\_copy()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
 
 
 
@@ -200,11 +202,11 @@ Copies a string.
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a3bdfb47ded8ab185e26728f374dac0e8}\label{string_8c_a3bdfb47ded8ab185e26728f374dac0e8}} 
+\mbox{\Hypertarget{string_8c_a0ad9e9f848db682cb5a807bad8d1d098}\label{string_8c_a0ad9e9f848db682cb5a807bad8d1d098}} 
 \index{string.c@{string.c}!string\_cstr@{string\_cstr}}
 \index{string\_cstr@{string\_cstr}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_cstr()}{string\_cstr()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+cstr (\begin{DoxyParamCaption}\item[{char $\ast$}]{cstr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+cstr (\begin{DoxyParamCaption}\item[{char $\ast$}]{cstr }\end{DoxyParamCaption})}
 
 
 
@@ -215,11 +217,11 @@ Converts a cstr into a string. The resulting string will only contain correct da
 {\em cstr} & the null-\/terminated string to be converted \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_a43853c2559852078b67572f9ec737098}\label{string_8c_a43853c2559852078b67572f9ec737098}} 
+\mbox{\Hypertarget{string_8c_a32eff65e35d3d3518ec107e429434589}\label{string_8c_a32eff65e35d3d3518ec107e429434589}} 
 \index{string.c@{string.c}!string\_erase@{string\_erase}}
 \index{string\_erase@{string\_erase}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_erase()}{string\_erase()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{int}]{start,  }\item[{int}]{len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{int}]{start,  }\item[{int}]{len }\end{DoxyParamCaption})}
 
 
 
@@ -239,11 +241,11 @@ Erases part of the string. If start is non-\/negative, the erased part of the st
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_ab6e264db38306c78fbfadf17a231b32e}\label{string_8c_ab6e264db38306c78fbfadf17a231b32e}} 
+\mbox{\Hypertarget{string_8c_a740881fdb258a2d80b4aebcfe9325299}\label{string_8c_a740881fdb258a2d80b4aebcfe9325299}} 
 \index{string.c@{string.c}!string\_find@{string\_find}}
 \index{string\_find@{string\_find}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_find()}{string\_find()}}
-{\footnotesize\ttfamily unsigned int string\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{needle,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily unsigned int string\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{needle,  }\item[{int}]{offset }\end{DoxyParamCaption})}
 
 
 
@@ -261,11 +263,11 @@ Find the position of the first instance of a string inside another string.
 \begin{DoxyReturn}{Returns}
 the index of needle inside s or the length of s if it was not found 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}\label{string_8c_ad327b0c4cd7ced6ea12aa850e98b145f}} 
+\mbox{\Hypertarget{string_8c_a0508ec0be871498978c5d6ef8fc4e678}\label{string_8c_a0508ec0be871498978c5d6ef8fc4e678}} 
 \index{string.c@{string.c}!string\_find\_reverse@{string\_find\_reverse}}
 \index{string\_find\_reverse@{string\_find\_reverse}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_find\_reverse()}{string\_find\_reverse()}}
-{\footnotesize\ttfamily unsigned int string\+\_\+find\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{needle,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily unsigned int string\+\_\+find\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{needle,  }\item[{int}]{offset }\end{DoxyParamCaption})}
 
 
 
@@ -283,11 +285,11 @@ Find the position of the last instance of a string inside another string. If off
 \begin{DoxyReturn}{Returns}
 the index of needle inside s or the length of s if it was not found 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_aa29b3438eb58fca3d2047b7ef92d816d}\label{string_8c_aa29b3438eb58fca3d2047b7ef92d816d}} 
+\mbox{\Hypertarget{string_8c_adeaf586a9ba6c4516ee362a3be57e755}\label{string_8c_adeaf586a9ba6c4516ee362a3be57e755}} 
 \index{string.c@{string.c}!string\_float@{string\_float}}
 \index{string\_float@{string\_float}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_float()}{string\_float()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+float (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+float (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -313,17 +315,17 @@ Frees a string previously initialized.
 {\em s} & the string to be freed \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_aaa5212d5d6731c76c65a23ae8e204478}\label{string_8c_aaa5212d5d6731c76c65a23ae8e204478}} 
+\mbox{\Hypertarget{string_8c_a48d5a3634578e5c59917e4658dd67cd8}\label{string_8c_a48d5a3634578e5c59917e4658dd67cd8}} 
 \index{string.c@{string.c}!string\_get\_conv\_buf@{string\_get\_conv\_buf}}
 \index{string\_get\_conv\_buf@{string\_get\_conv\_buf}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_get\_conv\_buf()}{string\_get\_conv\_buf()}}
-{\footnotesize\ttfamily static char$\ast$ string\+\_\+get\+\_\+conv\+\_\+buf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+get\+\_\+conv\+\_\+buf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{string_8c_a23f59bf62eb592abe96671caf49b7767}\label{string_8c_a23f59bf62eb592abe96671caf49b7767}} 
+\mbox{\Hypertarget{string_8c_a51ac7dbf84cd9af40be86e1c10c2c92d}\label{string_8c_a51ac7dbf84cd9af40be86e1c10c2c92d}} 
 \index{string.c@{string.c}!string\_insert@{string\_insert}}
 \index{string\_insert@{string\_insert}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_insert()}{string\_insert()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{in,  }\item[{int}]{at }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{in,  }\item[{int}]{at }\end{DoxyParamCaption})}
 
 
 
@@ -343,11 +345,11 @@ Inserts a string into another. If at is non-\/negative, src is inserted at the a
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a4821dbde2b4c57353ed86be16305ab9a}\label{string_8c_a4821dbde2b4c57353ed86be16305ab9a}} 
+\mbox{\Hypertarget{string_8c_ae32bdfe3fca1410f2370268e4427db47}\label{string_8c_ae32bdfe3fca1410f2370268e4427db47}} 
 \index{string.c@{string.c}!string\_int@{string\_int}}
 \index{string\_int@{string\_int}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_int()}{string\_int()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+int (\begin{DoxyParamCaption}\item[{long long int}]{i }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+int (\begin{DoxyParamCaption}\item[{long long int}]{i }\end{DoxyParamCaption})}
 
 
 
@@ -358,11 +360,11 @@ Converts a long long integer into a string. The resulting string will only conta
 {\em i} & the long long int to be converted \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{string_8c_af0200ff02e064ec8349c083a9bbaf55e}\label{string_8c_af0200ff02e064ec8349c083a9bbaf55e}} 
+\mbox{\Hypertarget{string_8c_ac22b94ea852c5887e5682d76ba308419}\label{string_8c_ac22b94ea852c5887e5682d76ba308419}} 
 \index{string.c@{string.c}!string\_len@{string\_len}}
 \index{string\_len@{string\_len}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_len()}{string\_len()}}
-{\footnotesize\ttfamily unsigned int string\+\_\+len (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily unsigned int string\+\_\+len (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s }\end{DoxyParamCaption})}
 
 
 
@@ -382,11 +384,11 @@ the string length
 \subsubsection{\texorpdfstring{string\_realloc()}{string\_realloc()}}
 {\footnotesize\ttfamily static void string\+\_\+realloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{string_8c_ac63af47d57e38af34dd1e58f6ff273ba}\label{string_8c_ac63af47d57e38af34dd1e58f6ff273ba}} 
+\mbox{\Hypertarget{string_8c_aac25952b7d6a00733391a1740e474c04}\label{string_8c_aac25952b7d6a00733391a1740e474c04}} 
 \index{string.c@{string.c}!string\_replace@{string\_replace}}
 \index{string\_replace@{string\_replace}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_replace()}{string\_replace()}}
-{\footnotesize\ttfamily unsigned int string\+\_\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily unsigned int string\+\_\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
 
 
 
@@ -408,11 +410,11 @@ Replaces the first instance of replace inside of a s with find.
 \begin{DoxyReturn}{Returns}
 the index of find inside the original src or the length of src if it was not found 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a04b7e04d7394d4f29797e846d62ff570}\label{string_8c_a04b7e04d7394d4f29797e846d62ff570}} 
+\mbox{\Hypertarget{string_8c_adfba62f65031ad3b038e5a1dca8a1fb8}\label{string_8c_adfba62f65031ad3b038e5a1dca8a1fb8}} 
 \index{string.c@{string.c}!string\_replace\_reverse@{string\_replace\_reverse}}
 \index{string\_replace\_reverse@{string\_replace\_reverse}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_replace\_reverse()}{string\_replace\_reverse()}}
-{\footnotesize\ttfamily unsigned int string\+\_\+replace\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily unsigned int string\+\_\+replace\+\_\+reverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{find,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{replace,  }\item[{int}]{offset }\end{DoxyParamCaption})}
 
 
 
@@ -434,11 +436,11 @@ Replaces the last instance of replace inside of a s with find. If offset is 0 th
 \begin{DoxyReturn}{Returns}
 the index of find inside the original src or the length of src if it was not found 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a1e1da173489e1abd1c2617a5928599aa}\label{string_8c_a1e1da173489e1abd1c2617a5928599aa}} 
+\mbox{\Hypertarget{string_8c_abefe6a3e0952e3fd6752f5fd61ba5643}\label{string_8c_abefe6a3e0952e3fd6752f5fd61ba5643}} 
 \index{string.c@{string.c}!string\_substr@{string\_substr}}
 \index{string\_substr@{string\_substr}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_substr()}{string\_substr()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+substr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src,  }\item[{int}]{start,  }\item[{int}]{len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+substr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src,  }\item[{int}]{start,  }\item[{int}]{len }\end{DoxyParamCaption})}
 
 
 
@@ -458,11 +460,11 @@ Fetches a portion of the string. If start is non-\/negative, the output string w
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_ab75ff668bc47f5ca8c7e205f2285065f}\label{string_8c_ab75ff668bc47f5ca8c7e205f2285065f}} 
+\mbox{\Hypertarget{string_8c_a987734237b19adcd3343e64188259fe5}\label{string_8c_a987734237b19adcd3343e64188259fe5}} 
 \index{string.c@{string.c}!string\_tolower@{string\_tolower}}
 \index{string\_tolower@{string\_tolower}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_tolower()}{string\_tolower()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+tolower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+tolower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
 
 
 
@@ -478,11 +480,11 @@ Converts a given string to lower case.
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_a9287e29d1f03f1c91295a7e1a84761ea}\label{string_8c_a9287e29d1f03f1c91295a7e1a84761ea}} 
+\mbox{\Hypertarget{string_8c_a763b13e2052d9ce5cbee5cba84778df8}\label{string_8c_a763b13e2052d9ce5cbee5cba84778df8}} 
 \index{string.c@{string.c}!string\_toupper@{string\_toupper}}
 \index{string\_toupper@{string\_toupper}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_toupper()}{string\_toupper()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+toupper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{src }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}}$\ast$ string\+\_\+toupper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
 
 
 
@@ -498,11 +500,11 @@ Converts a given string to upper case.
 \begin{DoxyReturn}{Returns}
 dest 
 \end{DoxyReturn}
-\mbox{\Hypertarget{string_8c_ad7aee9cb2e302d4d561816c0532c1e61}\label{string_8c_ad7aee9cb2e302d4d561816c0532c1e61}} 
+\mbox{\Hypertarget{string_8c_a4f63a8c36fd342f67e1e39b99886b383}\label{string_8c_a4f63a8c36fd342f67e1e39b99886b383}} 
 \index{string.c@{string.c}!string\_write@{string\_write}}
 \index{string\_write@{string\_write}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_write()}{string\_write()}}
-{\footnotesize\ttfamily ssize\+\_\+t string\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}}}]{s }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ssize\+\_\+t string\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$}]{s }\end{DoxyParamCaption})}
 
 
 
@@ -521,15 +523,21 @@ the number of written bytes on success, -\/1 otherwise
 
 
 \subsection{Variable Documentation}
-\mbox{\Hypertarget{string_8c_ad6695ff1ff16796c80ddef7916e0be67}\label{string_8c_ad6695ff1ff16796c80ddef7916e0be67}} 
+\mbox{\Hypertarget{string_8c_ac391acd3d53ec6b933175730193c35c5}\label{string_8c_ac391acd3d53ec6b933175730193c35c5}} 
 \index{string.c@{string.c}!string\_conv\_buf@{string\_conv\_buf}}
 \index{string\_conv\_buf@{string\_conv\_buf}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_conv\_buf}{string\_conv\_buf}}
-{\footnotesize\ttfamily char string\+\_\+conv\+\_\+buf\mbox{[}\mbox{\hyperlink{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}} $\ast$\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstring__t}{string\+\_\+t}} string\+\_\+conv\+\_\+buf\mbox{[}\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{string_8c_a7faf5c043dcd263a41d14c0770714593}\label{string_8c_a7faf5c043dcd263a41d14c0770714593}} 
+\mbox{\Hypertarget{string_8c_a61f719acd30321ed6a602b1d5ce9daf1}\label{string_8c_a61f719acd30321ed6a602b1d5ce9daf1}} 
+\index{string.c@{string.c}!string\_conv\_buf\_chars@{string\_conv\_buf\_chars}}
+\index{string\_conv\_buf\_chars@{string\_conv\_buf\_chars}!string.c@{string.c}}
+\subsubsection{\texorpdfstring{string\_conv\_buf\_chars}{string\_conv\_buf\_chars}}
+{\footnotesize\ttfamily char string\+\_\+conv\+\_\+buf\+\_\+chars\mbox{[}\mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{string_8c_a1609540f0a94f5e649ef1f4ca0cfd3ac}\label{string_8c_a1609540f0a94f5e649ef1f4ca0cfd3ac}} 
 \index{string.c@{string.c}!string\_conv\_buf\_offset@{string\_conv\_buf\_offset}}
 \index{string\_conv\_buf\_offset@{string\_conv\_buf\_offset}!string.c@{string.c}}
 \subsubsection{\texorpdfstring{string\_conv\_buf\_offset}{string\_conv\_buf\_offset}}
-{\footnotesize\ttfamily char string\+\_\+conv\+\_\+buf\+\_\+offset = 0\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int string\+\_\+conv\+\_\+buf\+\_\+offset = 0\hspace{0.3cm}{\ttfamily [static]}}
 

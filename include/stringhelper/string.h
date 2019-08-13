@@ -17,7 +17,7 @@
 #define STRING_CONVERSION_BUFFER_SIZE 32
 
 /**
- * @brief How many buffers there are for string_int, string_float and string_char conversions.
+ * @brief How many buffers there are for conversion.
  * 3 buffers are needed for the string_replace function
  */
 #define STRING_CONVERSION_BUFFERS 3
@@ -39,7 +39,7 @@ typedef struct{
  * @param buf the char buffer to be converted
  * @param size the size of the char buffer
  */
-string_t string_buf(char* buf, int size);
+string_t* string_buf(char* buf, int size);
 
 /**
  * @brief Converts a cstr into a string.
@@ -48,7 +48,7 @@ string_t string_buf(char* buf, int size);
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param cstr the null-terminated string to be converted
  */
-string_t string_cstr(char* cstr);
+string_t* string_cstr(char* cstr);
 
 /**
  * @brief Converts a char into a string.
@@ -57,7 +57,7 @@ string_t string_cstr(char* cstr);
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param ch the char to be converted
  */
-string_t string_char(char ch);
+string_t* string_char(char ch);
 
 /**
  * @brief Converts a long long integer into a string.
@@ -66,7 +66,7 @@ string_t string_char(char ch);
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param i the long long int to be converted
  */
-string_t string_int(long long int i);
+string_t* string_int(long long int i);
 
 /**
  * @brief Converts a double into a string.
@@ -75,7 +75,7 @@ string_t string_int(long long int i);
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param f the double to be converted
  */
-string_t string_float(double f);
+string_t* string_float(double f);
 
 /**
  * @brief Frees a string previously initialized.
@@ -89,7 +89,7 @@ void string_free(string_t* s);
  * @param src the input string
  * @return dest
  */
-string_t* string_copy(string_t* dest, string_t src);
+string_t* string_copy(string_t* dest, string_t* src);
 
 /**
  * @brief Appends a string to another.
@@ -98,7 +98,7 @@ string_t* string_copy(string_t* dest, string_t src);
  * @param in the string that is appended to src
  * @return dest
  */
-string_t* string_append(string_t* dest, string_t src, string_t in);
+string_t* string_append(string_t* dest, string_t* src, string_t* in);
 
 /**
  * @brief Inserts a string into another.
@@ -110,7 +110,7 @@ string_t* string_append(string_t* dest, string_t src, string_t in);
  * @param at the position where src is inserted
  * @return dest
  */
-string_t* string_insert(string_t* dest, string_t src, string_t in, int at);
+string_t* string_insert(string_t* dest, string_t* src, string_t* in, int at);
 
 
 /**
@@ -126,7 +126,7 @@ string_t* string_clear(string_t* s);
  * @param src the input string
  * @return dest
  */
-string_t* string_toupper(string_t* dest, string_t src);
+string_t* string_toupper(string_t* dest, string_t* src);
 
 /**
  * @brief Converts a given string to lower case.
@@ -134,7 +134,7 @@ string_t* string_toupper(string_t* dest, string_t src);
  * @param src the input string
  * @return dest
  */
-string_t* string_tolower(string_t* dest, string_t src);
+string_t* string_tolower(string_t* dest, string_t* src);
 
 /**
  * @brief Fetches a portion of the string.
@@ -148,7 +148,7 @@ string_t* string_tolower(string_t* dest, string_t src);
  * @param len the length of the new string
  * @return dest
  */
-string_t* string_substr(string_t* dest, string_t src, int start, int len);
+string_t* string_substr(string_t* dest, string_t* src, int start, int len);
 
 /**
  * @brief Erases part of the string.
@@ -162,7 +162,7 @@ string_t* string_substr(string_t* dest, string_t src, int start, int len);
  * @param len the number of characters to erase
  * @return dest
  */
-string_t* string_erase(string_t* dest, string_t src, int start, int len);
+string_t* string_erase(string_t* dest, string_t* src, int start, int len);
 
 /**
  * @brief Fetches a char of the string at a given position.
@@ -173,13 +173,13 @@ string_t* string_erase(string_t* dest, string_t src, int start, int len);
  * @param at the position of the desired character
  * @return the character at the at'th position of the string or NULL
  */
-char string_charAt(string_t s, int at);
+char string_charAt(string_t* s, int at);
 /**
  * @brief Returns the string length of a given string.
  * @param s the string
  * @return the string length
  */
-unsigned int string_len(string_t s);
+unsigned int string_len(string_t* s);
 
 /**
  * @brief Find the position of the first instance of a string inside another string.
@@ -188,7 +188,7 @@ unsigned int string_len(string_t s);
  * @param offset the offset from which to search from
  * @return the index of needle inside s or the length of s if it was not found
  */
-unsigned int string_find(string_t s, string_t needle, int offset);
+unsigned int string_find(string_t* s, string_t* needle, int offset);
 
 /**
  * @brief Find the position of the last instance of a string inside another string.
@@ -198,7 +198,7 @@ unsigned int string_find(string_t s, string_t needle, int offset);
  * @param offset the offset from which to search from
  * @return the index of needle inside s or the length of s if it was not found
  */
-unsigned int string_find_reverse(string_t s, string_t needle, int offset);
+unsigned int string_find_reverse(string_t* s, string_t* needle, int offset);
 
 /**
  * @brief Replaces the first instance of replace inside of a s with find.
@@ -209,7 +209,7 @@ unsigned int string_find_reverse(string_t s, string_t needle, int offset);
  * @param offset the offset from which to replace from
  * @return the index of find inside the original src or the length of src if it was not found
  */
-unsigned int string_replace(string_t* dest, string_t src, string_t find, string_t replace, int offset);
+unsigned int string_replace(string_t* dest, string_t* src, string_t* find, string_t* replace, int offset);
 
 /**
  * @brief Replaces the last instance of replace inside of a s with find.
@@ -221,16 +221,16 @@ unsigned int string_replace(string_t* dest, string_t src, string_t find, string_
  * @param offset the offset from which to replace from
  * @return the index of find inside the original src or the length of src if it was not found
  */
-unsigned int string_replace_reverse(string_t* dest, string_t src, string_t find, string_t replace, int offset);
+unsigned int string_replace_reverse(string_t* dest, string_t* src, string_t* find, string_t* replace, int offset);
 
 /**
  * @brief Compares two strings.
  * @param s1 string to be compared
  * @param s2 string to be compared
  * @return <0 if the first char that doesn't match has a lower value in s1 than in s2, 0 if both strings are equal, >1 if the first character that does not match has a greater value in s1 than in s2
- * @see string_compare_cstr(string_t s1, char* cstr2)
+ * @see string_compare_cstr(string_t* s1, char* cstr2)
  */
-int string_compare(string_t s1, string_t s2);
+int string_compare(string_t* s1, string_t* s2);
 
 /**
  * @brief Writes a string to a file descriptor.
@@ -238,4 +238,4 @@ int string_compare(string_t s1, string_t s2);
  * @param s the string
  * @return the number of written bytes on success, -1 otherwise
  */
-ssize_t string_write(int fd, string_t s);
+ssize_t string_write(int fd, string_t* s);

@@ -5,45 +5,15 @@
 #include <ctype.h>
 #include <stdio.h>
 
-string_t string_cstr(char* cstr){
-	string_t temp;
-	temp.chars = cstr;
-	temp.len = strlen(cstr);
-	temp.maxlen = temp.len;
-	return temp;
-}
 
-string_t string_char(char ch){
-	static char cs[STRING_CONVERSION_BUFFERS] = {'\0'};
-	static int i = 0;
-	i = (i+1)%(sizeof cs);
-	cs[i] = ch;
-	
-	string_t temp;
-	temp.chars = &cs[i];
-	temp.len = 1;
-	temp.maxlen = temp.len;
-	return temp;
-}
 
-string_t string_int(long long int i){
-	static char buf[32*STRING_CONVERSION_BUFFERS];
-	static int j = 0;
-	j = (j+32)%(sizeof buf);
-	
-	int l = snprintf(NULL, 0, "%lld", i); // get string length
-	snprintf(&buf[j], l+1, "%lld", i); // write i to str
-	return string_cstr(&buf[j]);
-}
+static char string_conv_buf[STRING_CONVERSION_BUFFER_SIZE*STRING_CONVERSION_BUFFERS];
+static char string_conv_buf_offset = 0;
 
-string_t string_float(double f){
-	static char buf[32*STRING_CONVERSION_BUFFERS];
-	static int j = 0;
-	j = (j+32)%(sizeof buf);
-	
-	int l = snprintf(NULL, 0, "%g", f); // get string length
-	snprintf(&buf[j], l+1, "%g", f); // write f to str
-	return string_cstr(&buf[j]);
+static char* string_get_conv_buf(){
+	//increment, then return
+	string_conv_buf_offset = (string_conv_buf_offset+STRING_CONVERSION_BUFFER_SIZE)%(sizeof string_conv_buf);
+	return &string_conv_buf[string_conv_buf_offset];
 }
 
 string_t string_buf(char* buf, int size){
@@ -52,6 +22,30 @@ string_t string_buf(char* buf, int size){
 	temp.len = size;
 	temp.maxlen = size;
 	return temp;
+}
+
+string_t string_cstr(char* cstr){
+	return string_buf(cstr, strlen(cstr));
+}
+
+string_t string_char(char ch){
+	char* convbuf = string_get_conv_buf();
+	convbuf[0] = ch;
+	return string_buf(convbuf, 1);
+}
+
+string_t string_int(long long int i){	
+	char* convbuf = string_get_conv_buf();
+	int l = snprintf(NULL, 0, "%lld", i); // get string length
+	snprintf(convbuf, l+1, "%lld", i); // write i to str
+	return string_buf(convbuf, l);
+}
+
+string_t string_float(double f){
+	char* convbuf = string_get_conv_buf();
+	int l = snprintf(NULL, 0, "%g", f); // get string length
+	snprintf(convbuf, l+1, "%g", f); // write f to str
+	return string_buf(convbuf, l);
 }
 
 void string_free(string_t* s){

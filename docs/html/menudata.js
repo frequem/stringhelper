@@ -36,4 +36,5 @@ var menudata={children:[
 {text:"s",url:"globals.html#index_s"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"s",url:"globals_func.html#index_s"}]},
+{text:"Variables",url:"globals_vars.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

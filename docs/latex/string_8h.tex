@@ -13,21 +13,23 @@ struct \mbox{\hyperlink{structstring__t}{string\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em The size the string grows by with each realloc. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{string_8h_a014fbb0898ab0cabc3f8f3de23ea6ecd}{S\+T\+R\+I\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}}~(\mbox{\hyperlink{structstring__t}{string\+\_\+t}})\{malloc(0), 0, 0\}
 \begin{DoxyCompactList}\small\item\em The string initializer that has to be used every time a string is created. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}~32
+\begin{DoxyCompactList}\small\item\em The buffer size of each conversion buffer needed for string\+\_\+int, string\+\_\+float and string\+\_\+char. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{string_8h_aa2dee6b6370413e707a21e18132f2667}{S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+RS}}~3
-\begin{DoxyCompactList}\small\item\em How many buffers there are for string\+\_\+int, string\+\_\+float and string\+\_\+char respectively 3 buffers are needed for the string\+\_\+replace function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em How many buffers there are for string\+\_\+int, string\+\_\+float and string\+\_\+char conversions. 3 buffers are needed for the string\+\_\+replace function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a3bdfb47ded8ab185e26728f374dac0e8}{string\+\_\+cstr}} (char $\ast$cstr)
-\begin{DoxyCompactList}\small\item\em Converts a cstr into a string The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a58ddc5fbc1d6cb19360b15c8b44194f5}{string\+\_\+char}} (char ch)
-\begin{DoxyCompactList}\small\item\em Converts a char into a string The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a4821dbde2b4c57353ed86be16305ab9a}{string\+\_\+int}} (long long int i)
-\begin{DoxyCompactList}\small\item\em Converts a long long integer into a string The resulting string will only contain correct data until string\+\_\+int will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_aa29b3438eb58fca3d2047b7ef92d816d}{string\+\_\+float}} (double f)
-\begin{DoxyCompactList}\small\item\em Converts a double into a string The resulting string will only contain correct data until string\+\_\+float will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a8ec70c9cb2fd7fdb80e64d3a5117900e}{string\+\_\+buf}} (char $\ast$buf, int size)
-\begin{DoxyCompactList}\small\item\em Converts a char buffer into a string The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Converts a char buffer into a string. The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a3bdfb47ded8ab185e26728f374dac0e8}{string\+\_\+cstr}} (char $\ast$cstr)
+\begin{DoxyCompactList}\small\item\em Converts a cstr into a string. The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a58ddc5fbc1d6cb19360b15c8b44194f5}{string\+\_\+char}} (char ch)
+\begin{DoxyCompactList}\small\item\em Converts a char into a string. The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_a4821dbde2b4c57353ed86be16305ab9a}{string\+\_\+int}} (long long int i)
+\begin{DoxyCompactList}\small\item\em Converts a long long integer into a string. The resulting string will only contain correct data until string\+\_\+int will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstring__t}{string\+\_\+t}} \mbox{\hyperlink{string_8h_aa29b3438eb58fca3d2047b7ef92d816d}{string\+\_\+float}} (double f)
+\begin{DoxyCompactList}\small\item\em Converts a double into a string. The resulting string will only contain correct data until string\+\_\+float will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{string_8h_a01b1a1e13e36040e9887989b97fb8fa2}{string\+\_\+free}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Frees a string previously initialized. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_ae1c6f51192f2e4991a4206de07dd3c2e}{string\+\_\+copy}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
@@ -35,7 +37,7 @@ void \mbox{\hyperlink{string_8h_a01b1a1e13e36040e9887989b97fb8fa2}{string\+\_\+f
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_aecd83f426ddb4be2fb9c035d481a053d}{string\+\_\+append}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} in)
 \begin{DoxyCompactList}\small\item\em Appends a string to another. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_a23f59bf62eb592abe96671caf49b7767}{string\+\_\+insert}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} in, int at)
-\begin{DoxyCompactList}\small\item\em Inserts a string into another If at is non-\/negative, src is inserted at the at\textquotesingle{}th position of dest or at the back if at is too large If at is negative, src is inserted at the at\textquotesingle{}th position from the back of dest or at the front if at is too small. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts a string into another. If at is non-\/negative, src is inserted at the at\textquotesingle{}th position of dest or at the back if at is too large If at is negative, src is inserted at the at\textquotesingle{}th position from the back of dest or at the front if at is too small. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_a33f74ed740e7a14ceab2f598e53dbbf8}{string\+\_\+clear}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$s)
 \begin{DoxyCompactList}\small\item\em Clears the string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_a9287e29d1f03f1c91295a7e1a84761ea}{string\+\_\+toupper}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
@@ -43,21 +45,21 @@ void \mbox{\hyperlink{string_8h_a01b1a1e13e36040e9887989b97fb8fa2}{string\+\_\+f
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_ab75ff668bc47f5ca8c7e205f2285065f}{string\+\_\+tolower}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src)
 \begin{DoxyCompactList}\small\item\em Converts a given string to lower case. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_a1e1da173489e1abd1c2617a5928599aa}{string\+\_\+substr}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, int start, int len)
-\begin{DoxyCompactList}\small\item\em Fetches a portion of the string If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the src string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fetches a portion of the string. If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the src string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$ \mbox{\hyperlink{string_8h_a43853c2559852078b67572f9ec737098}{string\+\_\+erase}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, int start, int len)
-\begin{DoxyCompactList}\small\item\em Erases part of the string If start is non-\/negative, the erased part of the string will start at the start\textquotesingle{}th position of the src string. If start is negative, the erased part of the string will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Erases part of the string. If start is non-\/negative, the erased part of the string will start at the start\textquotesingle{}th position of the src string. If start is negative, the erased part of the string will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{string_8h_af7ddc602f854e23ccd165a69bc7652cf}{string\+\_\+char\+At}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, int at)
-\begin{DoxyCompactList}\small\item\em Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Fetches a char of the string at a given position. If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_af0200ff02e064ec8349c083a9bbaf55e}{string\+\_\+len}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
 \begin{DoxyCompactList}\small\item\em Returns the string length of a given string. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_ab6e264db38306c78fbfadf17a231b32e}{string\+\_\+find}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
 \begin{DoxyCompactList}\small\item\em Find the position of the first instance of a string inside another string. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_ad327b0c4cd7ced6ea12aa850e98b145f}{string\+\_\+find\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} needle, int offset)
-\begin{DoxyCompactList}\small\item\em Find the position of the last instance of a string inside another string If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Find the position of the last instance of a string inside another string. If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_ac63af47d57e38af34dd1e58f6ff273ba}{string\+\_\+replace}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
 \begin{DoxyCompactList}\small\item\em Replaces the first instance of replace inside of a s with find. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{string_8h_a04b7e04d7394d4f29797e846d62ff570}{string\+\_\+replace\+\_\+reverse}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} src, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} find, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} replace, int offset)
-\begin{DoxyCompactList}\small\item\em Replaces the last instance of replace inside of a s with find If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Replaces the last instance of replace inside of a s with find. If offset is 0 the string\textquotesingle{}s length is used. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{string_8h_a302ff4c42f766b61fed6db8a4ba793ef}{string\+\_\+compare}} (\mbox{\hyperlink{structstring__t}{string\+\_\+t}} s1, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s2)
 \begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
 ssize\+\_\+t \mbox{\hyperlink{string_8h_ad7aee9cb2e302d4d561816c0532c1e61}{string\+\_\+write}} (int fd, \mbox{\hyperlink{structstring__t}{string\+\_\+t}} s)
@@ -65,6 +67,16 @@ ssize\+\_\+t \mbox{\hyperlink{string_8h_ad7aee9cb2e302d4d561816c0532c1e61}{strin
 
 
 \subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}\label{string_8h_aaaf14bf7c8f15dad12817b972a22aceb}} 
+\index{string.h@{string.h}!STRING\_CONVERSION\_BUFFER\_SIZE@{STRING\_CONVERSION\_BUFFER\_SIZE}}
+\index{STRING\_CONVERSION\_BUFFER\_SIZE@{STRING\_CONVERSION\_BUFFER\_SIZE}!string.h@{string.h}}
+\subsubsection{\texorpdfstring{STRING\_CONVERSION\_BUFFER\_SIZE}{STRING\_CONVERSION\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE~32}
+
+
+
+The buffer size of each conversion buffer needed for string\+\_\+int, string\+\_\+float and string\+\_\+char. 
+
 \mbox{\Hypertarget{string_8h_aa2dee6b6370413e707a21e18132f2667}\label{string_8h_aa2dee6b6370413e707a21e18132f2667}} 
 \index{string.h@{string.h}!STRING\_CONVERSION\_BUFFERS@{STRING\_CONVERSION\_BUFFERS}}
 \index{STRING\_CONVERSION\_BUFFERS@{STRING\_CONVERSION\_BUFFERS}!string.h@{string.h}}
@@ -73,7 +85,7 @@ ssize\+\_\+t \mbox{\hyperlink{string_8h_ad7aee9cb2e302d4d561816c0532c1e61}{strin
 
 
 
-How many buffers there are for string\+\_\+int, string\+\_\+float and string\+\_\+char respectively 3 buffers are needed for the string\+\_\+replace function. 
+How many buffers there are for string\+\_\+int, string\+\_\+float and string\+\_\+char conversions. 3 buffers are needed for the string\+\_\+replace function. 
 
 \mbox{\Hypertarget{string_8h_a014fbb0898ab0cabc3f8f3de23ea6ecd}\label{string_8h_a014fbb0898ab0cabc3f8f3de23ea6ecd}} 
 \index{string.h@{string.h}!STRING\_INITIALIZER@{STRING\_INITIALIZER}}
@@ -128,7 +140,7 @@ dest
 
 
 
-Converts a char buffer into a string The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
+Converts a char buffer into a string. The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -145,7 +157,7 @@ Converts a char buffer into a string The resulting string will only contain corr
 
 
 
-Converts a char into a string The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
+Converts a char into a string. The resulting string will only contain correct data until string\+\_\+char will be called again The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -160,7 +172,7 @@ Converts a char into a string The resulting string will only contain correct dat
 
 
 
-Fetches a char of the string at a given position If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. 
+Fetches a char of the string at a given position. If at is positive, the output character is the at\textquotesingle{}th char of the original string If at is negative, the output character is the at\textquotesingle{}th char from the end of the original string If the string is empty, this function always returns N\+U\+LL. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -241,7 +253,7 @@ dest
 
 
 
-Converts a cstr into a string The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
+Converts a cstr into a string. The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -256,7 +268,7 @@ Converts a cstr into a string The resulting string will only contain correct dat
 
 
 
-Erases part of the string If start is non-\/negative, the erased part of the string will start at the start\textquotesingle{}th position of the src string. If start is negative, the erased part of the string will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. 
+Erases part of the string. If start is non-\/negative, the erased part of the string will start at the start\textquotesingle{}th position of the src string. If start is negative, the erased part of the string will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -302,7 +314,7 @@ the index of needle inside s or the length of s if it was not found
 
 
 
-Find the position of the last instance of a string inside another string If offset is 0 the string\textquotesingle{}s length is used. 
+Find the position of the last instance of a string inside another string. If offset is 0 the string\textquotesingle{}s length is used. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -324,7 +336,7 @@ the index of needle inside s or the length of s if it was not found
 
 
 
-Converts a double into a string The resulting string will only contain correct data until string\+\_\+float will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
+Converts a double into a string. The resulting string will only contain correct data until string\+\_\+float will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -354,7 +366,7 @@ Frees a string previously initialized.
 
 
 
-Inserts a string into another If at is non-\/negative, src is inserted at the at\textquotesingle{}th position of dest or at the back if at is too large If at is negative, src is inserted at the at\textquotesingle{}th position from the back of dest or at the front if at is too small. 
+Inserts a string into another. If at is non-\/negative, src is inserted at the at\textquotesingle{}th position of dest or at the back if at is too large If at is negative, src is inserted at the at\textquotesingle{}th position from the back of dest or at the front if at is too small. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -378,7 +390,7 @@ dest
 
 
 
-Converts a long long integer into a string The resulting string will only contain correct data until string\+\_\+int will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
+Converts a long long integer into a string. The resulting string will only contain correct data until string\+\_\+int will be called again The resulting string should not be freed This function should only be used as a parameter for another string\+\_\+ function, never to initialize a variable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -437,7 +449,7 @@ the index of find inside the original src or the length of src if it was not fou
 
 
 
-Replaces the last instance of replace inside of a s with find If offset is 0 the string\textquotesingle{}s length is used. 
+Replaces the last instance of replace inside of a s with find. If offset is 0 the string\textquotesingle{}s length is used. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -463,7 +475,7 @@ the index of find inside the original src or the length of src if it was not fou
 
 
 
-Fetches a portion of the string If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the src string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. 
+Fetches a portion of the string. If start is non-\/negative, the output string will start at the start\textquotesingle{}th position of the src string. If start is negative, the substring will start at the start\textquotesingle{}th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. 
 
 
 \begin{DoxyParams}{Parameters}

@@ -90,7 +90,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">string.c File Reference</div>  </div>
 </div><!--header-->
@@ -102,21 +103,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aaa5212d5d6731c76c65a23ae8e204478"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#aaa5212d5d6731c76c65a23ae8e204478">string_get_conv_buf</a> ()</td></tr>
+<tr class="separator:aaa5212d5d6731c76c65a23ae8e204478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a8ec70c9cb2fd7fdb80e64d3a5117900e">string_buf</a> (char *buf, int size)</td></tr>
+<tr class="memdesc:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a char buffer into a string. The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a8ec70c9cb2fd7fdb80e64d3a5117900e">More...</a><br /></td></tr>
+<tr class="separator:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdfb47ded8ab185e26728f374dac0e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a3bdfb47ded8ab185e26728f374dac0e8">string_cstr</a> (char *cstr)</td></tr>
-<tr class="memdesc:a3bdfb47ded8ab185e26728f374dac0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a cstr into a string The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a3bdfb47ded8ab185e26728f374dac0e8">More...</a><br /></td></tr>
+<tr class="memdesc:a3bdfb47ded8ab185e26728f374dac0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a cstr into a string. The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a3bdfb47ded8ab185e26728f374dac0e8">More...</a><br /></td></tr>
 <tr class="separator:a3bdfb47ded8ab185e26728f374dac0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58ddc5fbc1d6cb19360b15c8b44194f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a58ddc5fbc1d6cb19360b15c8b44194f5">string_char</a> (char ch)</td></tr>
-<tr class="memdesc:a58ddc5fbc1d6cb19360b15c8b44194f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a char into a string The resulting string will only contain correct data until string_char will be called again The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a58ddc5fbc1d6cb19360b15c8b44194f5">More...</a><br /></td></tr>
+<tr class="memdesc:a58ddc5fbc1d6cb19360b15c8b44194f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a char into a string. The resulting string will only contain correct data until string_char will be called again The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a58ddc5fbc1d6cb19360b15c8b44194f5">More...</a><br /></td></tr>
 <tr class="separator:a58ddc5fbc1d6cb19360b15c8b44194f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4821dbde2b4c57353ed86be16305ab9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a4821dbde2b4c57353ed86be16305ab9a">string_int</a> (long long int i)</td></tr>
-<tr class="memdesc:a4821dbde2b4c57353ed86be16305ab9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long long integer into a string The resulting string will only contain correct data until string_int will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a4821dbde2b4c57353ed86be16305ab9a">More...</a><br /></td></tr>
+<tr class="memdesc:a4821dbde2b4c57353ed86be16305ab9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long long integer into a string. The resulting string will only contain correct data until string_int will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a4821dbde2b4c57353ed86be16305ab9a">More...</a><br /></td></tr>
 <tr class="separator:a4821dbde2b4c57353ed86be16305ab9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29b3438eb58fca3d2047b7ef92d816d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#aa29b3438eb58fca3d2047b7ef92d816d">string_float</a> (double f)</td></tr>
-<tr class="memdesc:aa29b3438eb58fca3d2047b7ef92d816d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a double into a string The resulting string will only contain correct data until string_float will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#aa29b3438eb58fca3d2047b7ef92d816d">More...</a><br /></td></tr>
+<tr class="memdesc:aa29b3438eb58fca3d2047b7ef92d816d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a double into a string. The resulting string will only contain correct data until string_float will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#aa29b3438eb58fca3d2047b7ef92d816d">More...</a><br /></td></tr>
 <tr class="separator:aa29b3438eb58fca3d2047b7ef92d816d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a8ec70c9cb2fd7fdb80e64d3a5117900e">string_buf</a> (char *buf, int size)</td></tr>
-<tr class="memdesc:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a char buffer into a string The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable.  <a href="#a8ec70c9cb2fd7fdb80e64d3a5117900e">More...</a><br /></td></tr>
-<tr class="separator:a8ec70c9cb2fd7fdb80e64d3a5117900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b1a1e13e36040e9887989b97fb8fa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a01b1a1e13e36040e9887989b97fb8fa2">string_free</a> (<a class="el" href="structstring__t.html">string_t</a> *s)</td></tr>
 <tr class="memdesc:a01b1a1e13e36040e9887989b97fb8fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a string previously initialized.  <a href="#a01b1a1e13e36040e9887989b97fb8fa2">More...</a><br /></td></tr>
 <tr class="separator:a01b1a1e13e36040e9887989b97fb8fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,7 +132,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:aecd83f426ddb4be2fb9c035d481a053d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a string to another.  <a href="#aecd83f426ddb4be2fb9c035d481a053d">More...</a><br /></td></tr>
 <tr class="separator:aecd83f426ddb4be2fb9c035d481a053d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f59bf62eb592abe96671caf49b7767"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a23f59bf62eb592abe96671caf49b7767">string_insert</a> (<a class="el" href="structstring__t.html">string_t</a> *dest, <a class="el" href="structstring__t.html">string_t</a> src, <a class="el" href="structstring__t.html">string_t</a> in, int at)</td></tr>
-<tr class="memdesc:a23f59bf62eb592abe96671caf49b7767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string into another If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small.  <a href="#a23f59bf62eb592abe96671caf49b7767">More...</a><br /></td></tr>
+<tr class="memdesc:a23f59bf62eb592abe96671caf49b7767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string into another. If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small.  <a href="#a23f59bf62eb592abe96671caf49b7767">More...</a><br /></td></tr>
 <tr class="separator:a23f59bf62eb592abe96671caf49b7767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f74ed740e7a14ceab2f598e53dbbf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a33f74ed740e7a14ceab2f598e53dbbf8">string_clear</a> (<a class="el" href="structstring__t.html">string_t</a> *s)</td></tr>
 <tr class="memdesc:a33f74ed740e7a14ceab2f598e53dbbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the string.  <a href="#a33f74ed740e7a14ceab2f598e53dbbf8">More...</a><br /></td></tr>
@@ -141,13 +144,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab75ff668bc47f5ca8c7e205f2285065f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given string to lower case.  <a href="#ab75ff668bc47f5ca8c7e205f2285065f">More...</a><br /></td></tr>
 <tr class="separator:ab75ff668bc47f5ca8c7e205f2285065f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1da173489e1abd1c2617a5928599aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a1e1da173489e1abd1c2617a5928599aa">string_substr</a> (<a class="el" href="structstring__t.html">string_t</a> *dest, <a class="el" href="structstring__t.html">string_t</a> src, int start, int len)</td></tr>
-<tr class="memdesc:a1e1da173489e1abd1c2617a5928599aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a portion of the string If start is non-negative, the output string will start at the start'th position of the src string. If start is negative, the substring will start at the start'th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start.  <a href="#a1e1da173489e1abd1c2617a5928599aa">More...</a><br /></td></tr>
+<tr class="memdesc:a1e1da173489e1abd1c2617a5928599aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a portion of the string. If start is non-negative, the output string will start at the start'th position of the src string. If start is negative, the substring will start at the start'th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start.  <a href="#a1e1da173489e1abd1c2617a5928599aa">More...</a><br /></td></tr>
 <tr class="separator:a1e1da173489e1abd1c2617a5928599aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43853c2559852078b67572f9ec737098"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstring__t.html">string_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a43853c2559852078b67572f9ec737098">string_erase</a> (<a class="el" href="structstring__t.html">string_t</a> *dest, <a class="el" href="structstring__t.html">string_t</a> src, int start, int len)</td></tr>
-<tr class="memdesc:a43853c2559852078b67572f9ec737098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases part of the string If start is non-negative, the erased part of the string will start at the start'th position of the src string. If start is negative, the erased part of the string will start at the start'th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start.  <a href="#a43853c2559852078b67572f9ec737098">More...</a><br /></td></tr>
+<tr class="memdesc:a43853c2559852078b67572f9ec737098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases part of the string. If start is non-negative, the erased part of the string will start at the start'th position of the src string. If start is negative, the erased part of the string will start at the start'th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start.  <a href="#a43853c2559852078b67572f9ec737098">More...</a><br /></td></tr>
 <tr class="separator:a43853c2559852078b67572f9ec737098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7ddc602f854e23ccd165a69bc7652cf"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#af7ddc602f854e23ccd165a69bc7652cf">string_charAt</a> (<a class="el" href="structstring__t.html">string_t</a> s, int at)</td></tr>
-<tr class="memdesc:af7ddc602f854e23ccd165a69bc7652cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a char of the string at a given position If at is positive, the output character is the at'th char of the original string If at is negative, the output character is the at'th char from the end of the original string If the string is empty, this function always returns NULL.  <a href="#af7ddc602f854e23ccd165a69bc7652cf">More...</a><br /></td></tr>
+<tr class="memdesc:af7ddc602f854e23ccd165a69bc7652cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a char of the string at a given position. If at is positive, the output character is the at'th char of the original string If at is negative, the output character is the at'th char from the end of the original string If the string is empty, this function always returns NULL.  <a href="#af7ddc602f854e23ccd165a69bc7652cf">More...</a><br /></td></tr>
 <tr class="separator:af7ddc602f854e23ccd165a69bc7652cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0200ff02e064ec8349c083a9bbaf55e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#af0200ff02e064ec8349c083a9bbaf55e">string_len</a> (<a class="el" href="structstring__t.html">string_t</a> s)</td></tr>
 <tr class="memdesc:af0200ff02e064ec8349c083a9bbaf55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string length of a given string.  <a href="#af0200ff02e064ec8349c083a9bbaf55e">More...</a><br /></td></tr>
@@ -156,13 +159,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab6e264db38306c78fbfadf17a231b32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the position of the first instance of a string inside another string.  <a href="#ab6e264db38306c78fbfadf17a231b32e">More...</a><br /></td></tr>
 <tr class="separator:ab6e264db38306c78fbfadf17a231b32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad327b0c4cd7ced6ea12aa850e98b145f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#ad327b0c4cd7ced6ea12aa850e98b145f">string_find_reverse</a> (<a class="el" href="structstring__t.html">string_t</a> s, <a class="el" href="structstring__t.html">string_t</a> needle, int offset)</td></tr>
-<tr class="memdesc:ad327b0c4cd7ced6ea12aa850e98b145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the position of the last instance of a string inside another string If offset is 0 the string's length is used.  <a href="#ad327b0c4cd7ced6ea12aa850e98b145f">More...</a><br /></td></tr>
+<tr class="memdesc:ad327b0c4cd7ced6ea12aa850e98b145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the position of the last instance of a string inside another string. If offset is 0 the string's length is used.  <a href="#ad327b0c4cd7ced6ea12aa850e98b145f">More...</a><br /></td></tr>
 <tr class="separator:ad327b0c4cd7ced6ea12aa850e98b145f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac63af47d57e38af34dd1e58f6ff273ba"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#ac63af47d57e38af34dd1e58f6ff273ba">string_replace</a> (<a class="el" href="structstring__t.html">string_t</a> *dest, <a class="el" href="structstring__t.html">string_t</a> src, <a class="el" href="structstring__t.html">string_t</a> find, <a class="el" href="structstring__t.html">string_t</a> replace, int offset)</td></tr>
 <tr class="memdesc:ac63af47d57e38af34dd1e58f6ff273ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the first instance of replace inside of a s with find.  <a href="#ac63af47d57e38af34dd1e58f6ff273ba">More...</a><br /></td></tr>
 <tr class="separator:ac63af47d57e38af34dd1e58f6ff273ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b7e04d7394d4f29797e846d62ff570"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a04b7e04d7394d4f29797e846d62ff570">string_replace_reverse</a> (<a class="el" href="structstring__t.html">string_t</a> *dest, <a class="el" href="structstring__t.html">string_t</a> src, <a class="el" href="structstring__t.html">string_t</a> find, <a class="el" href="structstring__t.html">string_t</a> replace, int offset)</td></tr>
-<tr class="memdesc:a04b7e04d7394d4f29797e846d62ff570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the last instance of replace inside of a s with find If offset is 0 the string's length is used.  <a href="#a04b7e04d7394d4f29797e846d62ff570">More...</a><br /></td></tr>
+<tr class="memdesc:a04b7e04d7394d4f29797e846d62ff570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the last instance of replace inside of a s with find. If offset is 0 the string's length is used.  <a href="#a04b7e04d7394d4f29797e846d62ff570">More...</a><br /></td></tr>
 <tr class="separator:a04b7e04d7394d4f29797e846d62ff570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a302ff4c42f766b61fed6db8a4ba793ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a302ff4c42f766b61fed6db8a4ba793ef">string_compare</a> (<a class="el" href="structstring__t.html">string_t</a> s1, <a class="el" href="structstring__t.html">string_t</a> s2)</td></tr>
 <tr class="memdesc:a302ff4c42f766b61fed6db8a4ba793ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two strings.  <a href="#a302ff4c42f766b61fed6db8a4ba793ef">More...</a><br /></td></tr>
@@ -170,6 +173,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ad7aee9cb2e302d4d561816c0532c1e61"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#ad7aee9cb2e302d4d561816c0532c1e61">string_write</a> (int fd, <a class="el" href="structstring__t.html">string_t</a> s)</td></tr>
 <tr class="memdesc:ad7aee9cb2e302d4d561816c0532c1e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a string to a file descriptor.  <a href="#ad7aee9cb2e302d4d561816c0532c1e61">More...</a><br /></td></tr>
 <tr class="separator:ad7aee9cb2e302d4d561816c0532c1e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad6695ff1ff16796c80ddef7916e0be67"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#ad6695ff1ff16796c80ddef7916e0be67">string_conv_buf</a> [<a class="el" href="string_8h.html#aaaf14bf7c8f15dad12817b972a22aceb">STRING_CONVERSION_BUFFER_SIZE</a> *<a class="el" href="string_8h.html#aa2dee6b6370413e707a21e18132f2667">STRING_CONVERSION_BUFFERS</a>]</td></tr>
+<tr class="separator:ad6695ff1ff16796c80ddef7916e0be67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7faf5c043dcd263a41d14c0770714593"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8c.html#a7faf5c043dcd263a41d14c0770714593">string_conv_buf_offset</a> = 0</td></tr>
+<tr class="separator:a7faf5c043dcd263a41d14c0770714593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aecd83f426ddb4be2fb9c035d481a053d"></a>
@@ -243,7 +253,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a char buffer into a string The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
+<p>Converts a char buffer into a string. The resulting string will only contain correct data as long as buf lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf</td><td>the char buffer to be converted </td></tr>
@@ -270,7 +280,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a char into a string The resulting string will only contain correct data until string_char will be called again The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
+<p>Converts a char into a string. The resulting string will only contain correct data until string_char will be called again The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>the char to be converted </td></tr>
@@ -306,7 +316,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fetches a char of the string at a given position If at is positive, the output character is the at'th char of the original string If at is negative, the output character is the at'th char from the end of the original string If the string is empty, this function always returns NULL. </p>
+<p>Fetches a char of the string at a given position. If at is positive, the output character is the at'th char of the original string If at is negative, the output character is the at'th char from the end of the original string If the string is empty, this function always returns NULL. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>the input string </td></tr>
@@ -438,7 +448,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a cstr into a string The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
+<p>Converts a cstr into a string. The resulting string will only contain correct data as long as cstr lives The resulting string must not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cstr</td><td>the null-terminated string to be converted </td></tr>
@@ -486,7 +496,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Erases part of the string If start is non-negative, the erased part of the string will start at the start'th position of the src string. If start is negative, the erased part of the string will start at the start'th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. </p>
+<p>Erases part of the string. If start is non-negative, the erased part of the string will start at the start'th position of the src string. If start is negative, the erased part of the string will start at the start'th position from the end of the src string. If len is positive, the erased part of the string will be at most len characters beginning from start (depending on the length of the src string) long. If len is negative, the erased part of the string will contain all characters beginning from start. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest</td><td>the output string </td></tr>
@@ -577,7 +587,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Find the position of the last instance of a string inside another string If offset is 0 the string's length is used. </p>
+<p>Find the position of the last instance of a string inside another string. If offset is 0 the string's length is used. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>the string to search inside of </td></tr>
@@ -606,7 +616,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a double into a string The resulting string will only contain correct data until string_float will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
+<p>Converts a double into a string. The resulting string will only contain correct data until string_float will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>the double to be converted </td></tr>
@@ -639,6 +649,31 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aaa5212d5d6731c76c65a23ae8e204478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5212d5d6731c76c65a23ae8e204478">&#9670;&nbsp;</a></span>string_get_conv_buf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* string_get_conv_buf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -680,7 +715,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inserts a string into another If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small. </p>
+<p>Inserts a string into another. If at is non-negative, src is inserted at the at'th position of dest or at the back if at is too large If at is negative, src is inserted at the at'th position from the back of dest or at the front if at is too small. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest</td><td>the output string </td></tr>
@@ -710,7 +745,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a long long integer into a string The resulting string will only contain correct data until string_int will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
+<p>Converts a long long integer into a string. The resulting string will only contain correct data until string_int will be called again The resulting string should not be freed This function should only be used as a parameter for another string_ function, never to initialize a variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>the long long int to be converted </td></tr>
@@ -886,7 +921,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Replaces the last instance of replace inside of a s with find If offset is 0 the string's length is used. </p>
+<p>Replaces the last instance of replace inside of a s with find. If offset is 0 the string's length is used. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest</td><td>the output string </td></tr>
@@ -939,7 +974,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fetches a portion of the string If start is non-negative, the output string will start at the start'th position of the src string. If start is negative, the substring will start at the start'th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. </p>
+<p>Fetches a portion of the string. If start is non-negative, the output string will start at the start'th position of the src string. If start is negative, the substring will start at the start'th position from the end of the src string. If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string). If len is negative, the output string will contain all characters beginning from start. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest</td><td>the output string </td></tr>
@@ -1067,10 +1102,55 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad6695ff1ff16796c80ddef7916e0be67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6695ff1ff16796c80ddef7916e0be67">&#9670;&nbsp;</a></span>string_conv_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char string_conv_buf[<a class="el" href="string_8h.html#aaaf14bf7c8f15dad12817b972a22aceb">STRING_CONVERSION_BUFFER_SIZE</a> *<a class="el" href="string_8h.html#aa2dee6b6370413e707a21e18132f2667">STRING_CONVERSION_BUFFERS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7faf5c043dcd263a41d14c0770714593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faf5c043dcd263a41d14c0770714593">&#9670;&nbsp;</a></span>string_conv_buf_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char string_conv_buf_offset = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 12 2019 23:43:35 for stringhelper by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 13 2019 03:02:02 for stringhelper by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

@@ -2,25 +2,26 @@
 #include <stdlib.h>
 
 /** 
+ * @brief The string initializer that has to be used every time a string is created.
+ */
+#define STRING_INITIALIZER (string_t){malloc(0), 0, 0}
+
+/** 
  * @brief The size the string grows by with each realloc.
  */
 #define STRING_LEN_INCREMENT 32
 
-/** 
- * @brief The string initializer that has to be used every time a string is created.
+/**
+ * @brief How many buffers there are for conversion.
+ * 3 buffers are needed for the string_replace function at maximum
  */
-#define STRING_INITIALIZER (string_t){malloc(0), 0, 0}
+#define STRING_CONVERSION_BUFFERS 3
 
 /**
  * @brief The buffer size of each conversion buffer needed for string_int, string_float and string_char.
  */
 #define STRING_CONVERSION_BUFFER_SIZE 32
 
-/**
- * @brief How many buffers there are for conversion.
- * 3 buffers are needed for the string_replace function
- */
-#define STRING_CONVERSION_BUFFERS 3
 
 /**
  * The struct that represents a (stringhelper) string
@@ -52,7 +53,7 @@ string_t* string_cstr(char* cstr);
 
 /**
  * @brief Converts a char into a string.
- * The resulting string will only contain correct data until string_char will be called again
+ * The resulting string will only contain correct data until the same conversion buffer is used again
  * The resulting string must not be freed
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param ch the char to be converted
@@ -61,8 +62,8 @@ string_t* string_char(char ch);
 
 /**
  * @brief Converts a long long integer into a string.
- * The resulting string will only contain correct data until string_int will be called again
- * The resulting string should not be freed
+ * The resulting string will only contain correct data until the same conversion buffer is used again
+ * The resulting string must not be freed
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param i the long long int to be converted
  */
@@ -70,8 +71,8 @@ string_t* string_int(long long int i);
 
 /**
  * @brief Converts a double into a string.
- * The resulting string will only contain correct data until string_float will be called again
- * The resulting string should not be freed
+ * The resulting string will only contain correct data until the same conversion buffer is used again
+ * The resulting string must not be freed
  * This function should only be used as a parameter for another string_ function, never to initialize a variable
  * @param f the double to be converted
  */
@@ -139,7 +140,7 @@ string_t* string_tolower(string_t* dest, string_t* src);
 /**
  * @brief Fetches a portion of the string.
  * If start is non-negative, the output string will start at the start'th position of the src string.
- * If start is negative, the substring will start at the start'th position from the end of the src string.
+ * If start is negative, the substring will start at the start'th position from the back of the src string.
  * If len is positive, the output string will contain at most len characters beginning from start (depending on the length of the src string).
  * If len is negative, the output string will contain all characters beginning from start.
  * @param dest the output string
@@ -166,14 +167,15 @@ string_t* string_erase(string_t* dest, string_t* src, int start, int len);
 
 /**
  * @brief Fetches a char of the string at a given position.
- * If at is positive, the output character is the at'th char of the original string
- * If at is negative, the output character is the at'th char from the end of the original string
+ * If at is positive, the output character is the at'th char of the string
+ * If at is negative, the output character is the at'th char from the back of the string
  * If the string is empty, this function always returns NULL
  * @param s the input string
  * @param at the position of the desired character
  * @return the character at the at'th position of the string or NULL
  */
 char string_charAt(string_t* s, int at);
+
 /**
  * @brief Returns the string length of a given string.
  * @param s the string
@@ -228,7 +230,6 @@ unsigned int string_replace_reverse(string_t* dest, string_t* src, string_t* fin
  * @param s1 string to be compared
  * @param s2 string to be compared
  * @return <0 if the first char that doesn't match has a lower value in s1 than in s2, 0 if both strings are equal, >1 if the first character that does not match has a greater value in s1 than in s2
- * @see string_compare_cstr(string_t* s1, char* cstr2)
  */
 int string_compare(string_t* s1, string_t* s2);
 

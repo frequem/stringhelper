@@ -6,9 +6,9 @@
 #include <stdio.h>
 
 
-static string_t string_conv_buf[STRING_CONVERSION_BUFFERS];
-static char string_conv_buf_chars[STRING_CONVERSION_BUFFERS][STRING_CONVERSION_BUFFER_SIZE];
-static int string_conv_buf_offset = 0;
+static _Thread_local string_t string_conv_buf[STRING_CONVERSION_BUFFERS];
+static _Thread_local char string_conv_buf_chars[STRING_CONVERSION_BUFFERS][STRING_CONVERSION_BUFFER_SIZE];
+static _Thread_local int string_conv_buf_offset = 0;
 
 static string_t* string_get_conv_buf(){
 	string_t* conv = &string_conv_buf[string_conv_buf_offset];
